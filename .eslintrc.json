@@ -33,5 +33,14 @@
         ],
         "react/react-in-jsx-scope": "off",
         "react/prop-types": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": [
+                    "src"
+                ]
+            }
+        }
     }
 }
