@@ -14,8 +14,8 @@ const MainContainer = styled.div`
 	justify-content: center;
 `;
 const Container = styled.div`
+	display: flex;
 	width: 600px;
 	padding: 10px;
-	display: flex;
 	background-color: #303030;
 `;
