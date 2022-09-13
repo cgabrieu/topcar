@@ -1,11 +1,11 @@
-function App() {
-  return (
-    <div>
-      <h1>
-        Preparando projeto
-      </h1>
-    </div>
-  );
-}
+import React from 'react';
+import BaseContainer from 'components/BaseContainer';
+import Home from 'pages/Home';
 
-export default App;
+export default function App() {
+	return (
+		<BaseContainer>
+			<Home />
+		</BaseContainer>
+	);
+}
