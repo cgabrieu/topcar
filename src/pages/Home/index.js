@@ -1,23 +1,38 @@
 import React from 'react';
 import styled from 'styled-components';
-import MOCK_CARS from 'mocks/cars.json';
-import BaseContainer from 'components/BaseContainer';
-import TITLES from './Home.consts';
+import List from 'components/List';
+import { TITLES, BUTTONS } from './Home.consts';
 
 export default function Home() {
 	return (
-		<BaseContainer>
-			<HomeTitle>{TITLES.home}</HomeTitle>
-			{MOCK_CARS.forEach((car) => (
-				<h1>{car.name}</h1>
-			))}
-		</BaseContainer>
+		<HomeContainer>
+			<HomeNav>
+				<CancelButton>{BUTTONS.cancel}</CancelButton>
+				<HomeTitle>{TITLES.home}</HomeTitle>
+				<ConfirmButton>{BUTTONS.confirm}</ConfirmButton>
+			</HomeNav>
+			<List />
+		</HomeContainer>
 	);
 }
+
+const HomeContainer = styled.div`
+	width: 100%;
+	background: blue;
+`;
+
+const HomeNav = styled.div`
+	display: flex;
+	background: yellow;
+`;
 
 const HomeTitle = styled.h2`
 	font-size: 22px;
 	font-weight: bold;
-	margin: 0 auto;
 	letter-spacing: 1px;
+	margin: 0 auto;
 `;
+
+const CancelButton = styled.button``;
+
+const ConfirmButton = styled(CancelButton)``;
