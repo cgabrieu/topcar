@@ -13,9 +13,10 @@ const MainContainer = styled.div`
 	display: flex;
 	justify-content: center;
 `;
+
 const Container = styled.div`
 	display: flex;
 	width: 600px;
 	padding: 10px;
-	background-color: #303030;
+	background-color: red;
 `;
