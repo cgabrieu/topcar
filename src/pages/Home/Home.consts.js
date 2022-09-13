@@ -2,4 +2,9 @@ const TITLES = {
 	home: 'TopCar',
 };
 
-export default TITLES;
+const BUTTONS = {
+	cancel: 'Cancelar',
+	confirm: 'Confirmar',
+};
+
+export { TITLES, BUTTONS };
