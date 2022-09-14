@@ -13,9 +13,7 @@ export default function List({ carsList }) {
 }
 
 const ListContainer = styled.ul`
-	background-color: green;
-
 	li:not(li:last-child) {
-		border-bottom: 2px dotted blue;
+		border-bottom: 1.5px solid var(--light-text-color);
 	}
 `;

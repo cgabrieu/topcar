@@ -6,7 +6,7 @@ import { TITLES, BUTTONS } from './Home.consts';
 import useCarsListPagination from '../../hooks/useCarsListPagination';
 
 export default function Home() {
-	const { currentData, next, prev, goTo, maxPage } = useCarsListPagination();
+	const { currentData, currentPage, next, prev, goTo, maxPage } = useCarsListPagination();
 	const carsList = currentData();
 
 	return (
@@ -17,28 +17,42 @@ export default function Home() {
 				<ConfirmButton>{BUTTONS.confirm}</ConfirmButton>
 			</HomeNav>
 			<List carsList={carsList} />
-			<Pagination next={next} prev={prev} goTo={goTo} maxPage={maxPage} />
+			<Pagination currentPage={currentPage} next={next} prev={prev} goTo={goTo} maxPage={maxPage} />
 		</HomeContainer>
 	);
 }
 
 const HomeContainer = styled.div`
 	width: 100%;
-	background: blue;
 `;
 
 const HomeNav = styled.div`
 	display: flex;
-	background: yellow;
+	margin-bottom: 15px;
 `;
 
 const HomeTitle = styled.h2`
-	font-size: 22px;
+	font-size: 21px;
 	font-weight: bold;
 	letter-spacing: 1px;
 	margin: 0 auto;
 `;
 
-const CancelButton = styled.button``;
+const CancelButton = styled.button`
+	background: none;
+	color: var(--cancel-text-color);
+	border: none;
+	font-size: 16px;
+	font-weight: 600;
+	outline: inherit;
+	cursor: pointer;
+	padding: 5px;
 
-const ConfirmButton = styled(CancelButton)``;
+	&:hover {
+		animation: shake 500ms ease-in-out forwards;
+	}
+`;
+
+const ConfirmButton = styled(CancelButton)`
+	color: var(--secondary-text-color);
+`;

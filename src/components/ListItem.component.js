@@ -20,10 +20,9 @@ const ItemContainer = styled.li`
 	justify-content: space-around;
 	height: 80px;
 	padding: 5px 0;
-	background-color: violet;
 
 	> h3 {
-		font-size: 16px;
+		font-size: 14px;
 		font-weight: 600;
 	}
 `;
@@ -37,8 +36,12 @@ const TagContainer = styled.div`
 `;
 
 const Tag = styled.div`
+	display: flex;
+	align-items: center;
 	height: 20px;
-	border-radius: 10px;
+	font-size: 13px;
+	border-radius: 5px;
 	padding: 0 10px;
-	background-color: yellow;
+	border: 2px solid var(--smoke-color);
+	color: var(--smoke-color);
 `;
