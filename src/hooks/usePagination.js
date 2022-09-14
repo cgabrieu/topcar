@@ -1,18 +1,16 @@
 import { useState } from 'react';
-import { getCarsByRange, getInfoCars } from 'pages/Home/Home.service';
 
 const itemsPerPage = 10;
 
-function useCarsListPagination() {
+function usePagination({ data, size }) {
 	const [currentPage, setCurrentPage] = useState(1);
 
-	const quantityCars = getInfoCars().quantity;
-	const maxPage = Math.ceil(quantityCars / itemsPerPage);
+	const maxPage = Math.ceil(size / itemsPerPage);
 
 	function currentData() {
 		const begin = (currentPage - 1) * itemsPerPage;
 		const end = begin + itemsPerPage;
-		return getCarsByRange(begin, end).data;
+		return data.slice(begin ,end);
 	}
 
 	function next() {
@@ -31,4 +29,4 @@ function useCarsListPagination() {
 	return { next, prev, goTo, currentData, currentPage, maxPage };
 }
 
-export default useCarsListPagination;
+export default usePagination;

@@ -1,15 +1,10 @@
 import MOCK_CARS from 'mocks/cars.json';
 
-function getCarsByRange(begin, end) {
+function getCars() {
 	return {
-		data: MOCK_CARS.slice(begin, end),
+		size: MOCK_CARS.length,
+		data: MOCK_CARS,
 	};
 }
 
-function getInfoCars() {
-	return {
-		quantity: MOCK_CARS.length,
-	};
-}
-
-export { getCarsByRange, getInfoCars };
+export default getCars;

@@ -3,11 +3,13 @@ import styled from 'styled-components';
 import List from 'components/List.component';
 import Pagination from 'components/Pagination.component';
 import { TITLES, BUTTONS } from './Home.consts';
-import useCarsListPagination from '../../hooks/useCarsListPagination';
+import usePagination from '../../hooks/usePagination';
+import getCars from './Home.service';
 
 export default function Home() {
-	const { currentData, currentPage, next, prev, goTo, maxPage } = useCarsListPagination();
-	const carsList = currentData();
+	const carsResponse = getCars();
+	const { currentData, currentPage, next, prev, goTo, maxPage } = usePagination(carsResponse);
+	const currentCarsList = currentData();
 
 	return (
 		<HomeContainer>
@@ -16,7 +18,7 @@ export default function Home() {
 				<HomeTitle>{TITLES.home}</HomeTitle>
 				<ConfirmButton>{BUTTONS.confirm}</ConfirmButton>
 			</HomeNav>
-			<List carsList={carsList} />
+			<List carsList={currentCarsList} />
 			<Pagination currentPage={currentPage} next={next} prev={prev} goTo={goTo} maxPage={maxPage} />
 		</HomeContainer>
 	);
