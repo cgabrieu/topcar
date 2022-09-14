@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700&display=swap');
 
 :root {
-	--background-color: #fafafa;
+	--light-color: #fafafa;
 	--main-text-color: #000000;
 	--secondary-text-color: #5db075;
+	--cancel-text-color: #ff4d4d;
+	--light-text-color: #e8e8e8;
+	--smoke-color: #989898;
 }
 
 * {
@@ -11,7 +14,22 @@
 }
 
 body {
-	background-color: var(--background-color);
-	font-family: 'Source Sans Pro', sans-serif;
 	color: var(--main-text-color);
+	background-color: var(--light-color);
+	font-family: 'Inter', sans-serif;
+}
+
+@keyframes shake {
+	0% {
+		transform: rotate(2deg);
+	}
+	50% {
+		transform: rotate(-3deg);
+	}
+	70% {
+		transform: rotate(3deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
 }
