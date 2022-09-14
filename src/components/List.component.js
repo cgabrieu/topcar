@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import MOCK_CARS from 'mocks/cars.json';
-import ListItem from './ListItem';
+import ListItem from './ListItem.component';
 
-export default function List() {
+export default function List({ carsList }) {
 	return (
 		<ListContainer>
-			{MOCK_CARS.map(({ id, name, UF, model, color }) => (
+			{carsList.map(({ id, name, UF, model, color }) => (
 				<ListItem key={id} name={name} UF={UF} model={model} color={color} />
 			))}
 		</ListContainer>
