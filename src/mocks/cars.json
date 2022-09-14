@@ -40,5 +40,131 @@
 		"UF": "RS",
 		"model": "Q3",
 		"color": "Vermelho"
+	},
+	{
+		"id": 7,
+		"name": "Jaguar 2.0 16V P250 R-DYNAMIC S AWD",
+		"UF": "RJ",
+		"model": "E-Pace",
+		"color": "Branco"
+	},
+    {
+		"id": 8,
+		"name": "Mercedes-Benz GT 3.0 Amg 4p Hibrido",
+		"UF": "SP",
+		"model": "GT",
+		"color": "Azul"
+	},
+    {
+		"id": 9,
+		"name": "Mercedes-benz C43 3.0 V6 Amg Coupe 4matic 2020",
+		"UF": "SC",
+		"model": "Classe C",
+		"color": "Preto"
+	},
+    {
+		"id": 10,
+		"name": "Bmw 320i 2.0 16v Turbo M Sport 2021",
+		"UF": "ES",
+		"model": "320i",
+		"color": "Preto"
+	},
+    {
+		"id": 11,
+		"name": "BMW X5 Xdrive 30d 3.0 258cv",
+		"UF": "MG",
+		"model": "X5",
+		"color": "Branco"
+	},
+    {
+		"id": 12,
+		"name": "Audi Q3 2.0 Tfsi Attraction",
+		"UF": "RS",
+		"model": "Q3",
+		"color": "Vermelho"
+	},
+	{
+		"id": 13,
+		"name": "Jaguar 2.0 16V P250 R-DYNAMIC S AWD",
+		"UF": "RJ",
+		"model": "E-Pace",
+		"color": "Branco"
+	},
+    {
+		"id": 14,
+		"name": "Mercedes-Benz GT 3.0 Amg 4p Hibrido",
+		"UF": "SP",
+		"model": "GT",
+		"color": "Azul"
+	},
+    {
+		"id": 15,
+		"name": "Mercedes-benz C43 3.0 V6 Amg Coupe 4matic 2020",
+		"UF": "SC",
+		"model": "Classe C",
+		"color": "Preto"
+	},
+    {
+		"id": 16,
+		"name": "Bmw 320i 2.0 16v Turbo M Sport 2021",
+		"UF": "ES",
+		"model": "320i",
+		"color": "Preto"
+	},
+    {
+		"id": 17,
+		"name": "BMW X5 Xdrive 30d 3.0 258cv",
+		"UF": "MG",
+		"model": "X5",
+		"color": "Branco"
+	},
+    {
+		"id": 18,
+		"name": "Audi Q3 2.0 Tfsi Attraction",
+		"UF": "RS",
+		"model": "Q3",
+		"color": "Vermelho"
+	},
+	{
+		"id": 19,
+		"name": "Jaguar 2.0 16V P250 R-DYNAMIC S AWD",
+		"UF": "RJ",
+		"model": "E-Pace",
+		"color": "Branco"
+	},
+    {
+		"id": 20,
+		"name": "Mercedes-Benz GT 3.0 Amg 4p Hibrido",
+		"UF": "SP",
+		"model": "GT",
+		"color": "Azul"
+	},
+    {
+		"id": 21,
+		"name": "Mercedes-benz C43 3.0 V6 Amg Coupe 4matic 2020",
+		"UF": "SC",
+		"model": "Classe C",
+		"color": "Preto"
+	},
+    {
+		"id": 22,
+		"name": "Bmw 320i 2.0 16v Turbo M Sport 2021",
+		"UF": "ES",
+		"model": "320i",
+		"color": "Preto"
+	},
+    {
+		"id": 23,
+		"name": "BMW X5 Xdrive 30d 3.0 258cv",
+		"UF": "MG",
+		"model": "X5",
+		"color": "Branco"
+	},
+    {
+		"id": 24,
+		"name": "Audi Q3 2.0 Tfsi Attraction",
+		"UF": "RS",
+		"model": "Q3",
+		"color": "Vermelho"
 	}
 ]
