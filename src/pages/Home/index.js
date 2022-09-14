@@ -1,9 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import List from 'components/List';
+import List from 'components/List.component';
+import Pagination from 'components/Pagination.component';
 import { TITLES, BUTTONS } from './Home.consts';
+import useCarsListPagination from '../../hooks/useCarsListPagination';
 
 export default function Home() {
+	const { currentData, next, prev, goTo, maxPage } = useCarsListPagination();
+	const carsList = currentData();
+
 	return (
 		<HomeContainer>
 			<HomeNav>
@@ -11,7 +16,8 @@ export default function Home() {
 				<HomeTitle>{TITLES.home}</HomeTitle>
 				<ConfirmButton>{BUTTONS.confirm}</ConfirmButton>
 			</HomeNav>
-			<List />
+			<List carsList={carsList} />
+			<Pagination next={next} prev={prev} goTo={goTo} maxPage={maxPage} />
 		</HomeContainer>
 	);
 }
