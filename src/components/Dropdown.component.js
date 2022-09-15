@@ -7,6 +7,7 @@ export default function Dropdown({
 	type,
 	headerText,
 	carsList,
+	goTo,
 	filters,
 	setFilters,
 }) {
@@ -17,6 +18,11 @@ export default function Dropdown({
 		.map((car) => car[type])
 		.filter((option, i, self) => self.indexOf(option) === i);
 
+	const handleOnClick = (option) => {
+		goTo(1);
+		setFilters({ filterType: type, option });
+	};
+
 	return (
 		<DropdownContainer ref={ref}>
 			<HeaderDropdown onClick={() => setIsOpen(!isOpen)}>
@@ -26,10 +32,7 @@ export default function Dropdown({
 			{isOpen && (
 				<OptionsContainer>
 					{options.map((option) => (
-						<OptionItem
-							key={option}
-							onClick={() => setFilters({ filterType: type, option })}
-						>
+						<OptionItem key={option} onClick={() => handleOnClick(option)}>
 							<p>{option}</p>
 							<Checkbox isChecked={filters[type].includes(option)} />
 						</OptionItem>

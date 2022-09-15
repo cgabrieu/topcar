@@ -34,6 +34,7 @@ export default function Home() {
 					type="UF"
 					headerText="UF"
 					carsList={currentCarsList}
+					goTo={goTo}
 					filters={filters}
 					setFilters={setFilters}
 				/>
@@ -41,6 +42,7 @@ export default function Home() {
 					type="model"
 					headerText="Modelo"
 					carsList={currentCarsList}
+					goTo={goTo}
 					filters={filters}
 					setFilters={setFilters}
 				/>
@@ -48,6 +50,7 @@ export default function Home() {
 					type="color"
 					headerText="Cor"
 					carsList={currentCarsList}
+					goTo={goTo}
 					filters={filters}
 					setFilters={setFilters}
 				/>
