@@ -33,7 +33,7 @@ export default function Home() {
 				<Dropdown
 					type="UF"
 					headerText="UF"
-					carsList={currentCarsList}
+					carsList={carsFiltered}
 					goTo={goTo}
 					filters={filters}
 					setFilters={setFilters}
@@ -41,7 +41,7 @@ export default function Home() {
 				<Dropdown
 					type="model"
 					headerText="Modelo"
-					carsList={currentCarsList}
+					carsList={carsFiltered}
 					goTo={goTo}
 					filters={filters}
 					setFilters={setFilters}
@@ -49,7 +49,7 @@ export default function Home() {
 				<Dropdown
 					type="color"
 					headerText="Cor"
-					carsList={currentCarsList}
+					carsList={carsFiltered}
 					goTo={goTo}
 					filters={filters}
 					setFilters={setFilters}
