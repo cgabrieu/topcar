@@ -7,12 +7,6 @@ function usePagination(data) {
 
 	const maxPage = Math.ceil(data.length / itemsPerPage);
 
-	function currentData() {
-		const begin = (currentPage - 1) * itemsPerPage;
-		const end = begin + itemsPerPage;
-		return data.slice(begin, end);
-	}
-
 	function next() {
 		setCurrentPage((currPage) => Math.min(currPage + 1, maxPage));
 	}
@@ -24,6 +18,14 @@ function usePagination(data) {
 	function goTo(page) {
 		const pageNumber = Math.max(1, page);
 		setCurrentPage(() => Math.min(pageNumber, maxPage));
+	}
+
+	function currentData() {
+		const begin = (currentPage - 1) * itemsPerPage;
+		const end = begin + itemsPerPage;
+
+		const currData = data.slice(begin, end);
+		return currData.length ? currData : goTo(1);
 	}
 
 	return { next, prev, goTo, currentData, currentPage, maxPage };
