@@ -1,15 +1,16 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import styled from 'styled-components';
-import List from 'components/List.component';
 import Pagination from 'components/Pagination.component';
 import usePagination from 'hooks/usePagination';
 import Dropdown from 'components/Dropdown.component';
+import List from 'components/List.component';
 import filtersReduce, { initialStateFilters } from 'utils/filtersReduce';
 import filtersApplier from 'utils/filtersApplier';
 import { TITLES, BUTTONS, FILTERS } from './Home.consts';
 import getCars from './Home.service';
 
 export default function Home() {
+	const [selectedCars, setSelectedCars] = useState([]);
 	const [filters, setFilters] = useReducer(filtersReduce, initialStateFilters);
 
 	const carsList = getCars().data;
@@ -23,7 +24,9 @@ export default function Home() {
 	return (
 		<HomeContainer>
 			<HomeNav>
-				<CancelButton>{BUTTONS.cancel}</CancelButton>
+				<CancelButton onClick={() => setSelectedCars([])}>
+					{BUTTONS.cancel}
+				</CancelButton>
 				<HomeTitle>{TITLES.home}</HomeTitle>
 				<ConfirmButton>{BUTTONS.confirm}</ConfirmButton>
 			</HomeNav>
@@ -53,7 +56,11 @@ export default function Home() {
 					setFilters={setFilters}
 				/>
 			</FiltersContainer>
-			<List carsList={currentCarsList} />
+			<List
+				carsList={currentCarsList}
+				selectedCars={selectedCars}
+				setSelectedCars={setSelectedCars}
+			/>
 			<Pagination
 				currentPage={currentPage}
 				next={next}
