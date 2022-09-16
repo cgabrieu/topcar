@@ -7,4 +7,10 @@ const BUTTONS = {
 	confirm: 'Confirmar',
 };
 
-export { TITLES, BUTTONS };
+const FILTERS = {
+	UF: 'Estado',
+	model: 'Modelo',
+	color: 'Cor',
+};
+
+export { TITLES, BUTTONS, FILTERS };

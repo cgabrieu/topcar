@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import styled from 'styled-components';
 import List from 'components/List.component';
 import Pagination from 'components/Pagination.component';
-import { TITLES, BUTTONS } from './Home.consts';
-import usePagination from '../../hooks/usePagination';
+import usePagination from 'hooks/usePagination';
+import Dropdown from 'components/Dropdown.component';
+import filtersReduce, { initialStateFilters } from 'utils/filtersReduce';
+import filtersApplier from 'utils/filtersApplier';
+import { TITLES, BUTTONS, FILTERS } from './Home.consts';
 import getCars from './Home.service';
 
 export default function Home() {
-	const carsResponse = getCars();
-	const { currentData, currentPage, next, prev, goTo, maxPage } = usePagination(carsResponse);
+	const [filters, setFilters] = useReducer(filtersReduce, initialStateFilters);
+
+	const carsList = getCars().data;
+	const carsFiltered = filtersApplier(carsList, filters);
+
+	const { currentData, currentPage, next, prev, goTo, maxPage } =
+		usePagination(carsFiltered);
+
 	const currentCarsList = currentData();
 
 	return (
@@ -18,11 +27,51 @@ export default function Home() {
 				<HomeTitle>{TITLES.home}</HomeTitle>
 				<ConfirmButton>{BUTTONS.confirm}</ConfirmButton>
 			</HomeNav>
+			<FiltersContainer>
+				<ButtonResetFilters onClick={() => setFilters({ filterType: 'reset' })}>
+					Resetar filtros
+				</ButtonResetFilters>
+				<Dropdown
+					type="UF"
+					headerText={FILTERS.UF}
+					carsList={carsFiltered}
+					goTo={goTo}
+					filters={filters}
+					setFilters={setFilters}
+				/>
+				<Dropdown
+					type="model"
+					headerText={FILTERS.model}
+					carsList={carsFiltered}
+					goTo={goTo}
+					filters={filters}
+					setFilters={setFilters}
+				/>
+				<Dropdown
+					type="color"
+					headerText={FILTERS.color}
+					carsList={carsFiltered}
+					goTo={goTo}
+					filters={filters}
+					setFilters={setFilters}
+				/>
+			</FiltersContainer>
 			<List carsList={currentCarsList} />
-			<Pagination currentPage={currentPage} next={next} prev={prev} goTo={goTo} maxPage={maxPage} />
+			<Pagination
+				currentPage={currentPage}
+				next={next}
+				prev={prev}
+				goTo={goTo}
+				maxPage={maxPage}
+			/>
 		</HomeContainer>
 	);
 }
+
+const FiltersContainer = styled.div`
+	display: flex;
+	margin-bottom: 10px;
+`;
 
 const HomeContainer = styled.div`
 	width: 100%;
@@ -30,7 +79,7 @@ const HomeContainer = styled.div`
 
 const HomeNav = styled.div`
 	display: flex;
-	margin-bottom: 15px;
+	margin-bottom: 25px;
 `;
 
 const HomeTitle = styled.h2`
@@ -48,7 +97,6 @@ const CancelButton = styled.button`
 	font-weight: 600;
 	outline: inherit;
 	cursor: pointer;
-	padding: 5px;
 
 	&:hover {
 		animation: shake 500ms ease-in-out forwards;
@@ -57,4 +105,11 @@ const CancelButton = styled.button`
 
 const ConfirmButton = styled(CancelButton)`
 	color: var(--secondary-text-color);
+`;
+
+const ButtonResetFilters = styled(CancelButton)`
+	color: var(--main-text-color);
+	font-size: 10px;
+	border: 2px solid var(--main-text-color);
+	border-radius: 5px;
 `;
