@@ -30,7 +30,7 @@ export default function ListItem({ car, selectedCars, setSelectedCars }) {
 
 const Checkbox = styled.div`
 	cursor: pointer;
-	width: 25px;
+	min-width: 25px;
 	height: 25px;
 	border: 3px solid var(--main-text-color);
 `;
