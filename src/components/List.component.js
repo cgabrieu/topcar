@@ -2,11 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import ListItem from './ListItem.component';
 
-export default function List({ carsList }) {
+export default function List({ carsList, selectedCars, setSelectedCars }) {
 	return (
 		<ListContainer>
-			{carsList.map(({ id, name, UF, model, color }) => (
-				<ListItem key={id} name={name} UF={UF} model={model} color={color} />
+			{carsList.map((car) => (
+				<ListItem
+					key={car.id}
+					car={car}
+					selectedCars={selectedCars}
+					setSelectedCars={setSelectedCars}
+				/>
 			))}
 		</ListContainer>
 	);
