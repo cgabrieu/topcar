@@ -35,6 +35,7 @@ export default function Home() {
 					type="UF"
 					headerText={FILTERS.UF}
 					carsList={carsFiltered}
+					goTo={goTo}
 					filters={filters}
 					setFilters={setFilters}
 				/>
@@ -42,6 +43,7 @@ export default function Home() {
 					type="model"
 					headerText={FILTERS.model}
 					carsList={carsFiltered}
+					goTo={goTo}
 					filters={filters}
 					setFilters={setFilters}
 				/>
@@ -49,6 +51,7 @@ export default function Home() {
 					type="color"
 					headerText={FILTERS.color}
 					carsList={carsFiltered}
+					goTo={goTo}
 					filters={filters}
 					setFilters={setFilters}
 				/>

@@ -7,6 +7,7 @@ export default function Dropdown({
 	type,
 	headerText,
 	carsList,
+	goTo,
 	filters,
 	setFilters,
 }) {
@@ -18,6 +19,7 @@ export default function Dropdown({
 		.filter((option, i, self) => self.indexOf(option) === i);
 
 	const handleOnClick = (option) => {
+		goTo(1);
 		setFilters({ filterType: type, option });
 	};
 
