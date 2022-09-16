@@ -6,11 +6,13 @@ import Dropdown from 'components/Dropdown.component';
 import List from 'components/List.component';
 import filtersReduce, { initialStateFilters } from 'utils/filtersReduce';
 import filtersApplier from 'utils/filtersApplier';
+import Modal from 'components/Modal.component';
 import { TITLES, BUTTONS, FILTERS } from './Home.consts';
 import getCars from './Home.service';
 
 export default function Home() {
 	const [selectedCars, setSelectedCars] = useState([]);
+	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [filters, setFilters] = useReducer(filtersReduce, initialStateFilters);
 
 	const carsList = getCars().data;
@@ -22,56 +24,67 @@ export default function Home() {
 	const currentCarsList = currentData();
 
 	return (
-		<HomeContainer>
-			<HomeNav>
-				<CancelButton onClick={() => setSelectedCars([])}>
-					{BUTTONS.cancel}
-				</CancelButton>
-				<HomeTitle>{TITLES.home}</HomeTitle>
-				<ConfirmButton>{BUTTONS.confirm}</ConfirmButton>
-			</HomeNav>
-			<FiltersContainer>
-				<ButtonResetFilters onClick={() => setFilters({ filterType: 'reset' })}>
-					Resetar filtros
-				</ButtonResetFilters>
-				<Dropdown
-					type="UF"
-					headerText={FILTERS.UF}
-					carsList={carsFiltered}
-					goTo={goTo}
-					filters={filters}
-					setFilters={setFilters}
+		<>
+			{isModalOpen && (
+				<Modal selectedCars={selectedCars} setIsModalOpen={setIsModalOpen} />
+			)}
+			<HomeContainer>
+				<HomeNav>
+					<CancelButton onClick={() => setSelectedCars([])}>
+						{BUTTONS.cancel}
+					</CancelButton>
+					<HomeTitle>{TITLES.home}</HomeTitle>
+					{selectedCars.length > 0 && (
+						<ConfirmButton onClick={() => setIsModalOpen(true)}>
+							{BUTTONS.confirm}
+						</ConfirmButton>
+					)}
+				</HomeNav>
+				<FiltersContainer>
+					<ButtonResetFilters
+						onClick={() => setFilters({ filterType: 'reset' })}
+					>
+						{BUTTONS.resetFilters}
+					</ButtonResetFilters>
+					<Dropdown
+						type="UF"
+						headerText={FILTERS.UF}
+						carsList={carsFiltered}
+						goTo={goTo}
+						filters={filters}
+						setFilters={setFilters}
+					/>
+					<Dropdown
+						type="model"
+						headerText={FILTERS.model}
+						carsList={carsFiltered}
+						goTo={goTo}
+						filters={filters}
+						setFilters={setFilters}
+					/>
+					<Dropdown
+						type="color"
+						headerText={FILTERS.color}
+						carsList={carsFiltered}
+						goTo={goTo}
+						filters={filters}
+						setFilters={setFilters}
+					/>
+				</FiltersContainer>
+				<List
+					carsList={currentCarsList}
+					selectedCars={selectedCars}
+					setSelectedCars={setSelectedCars}
 				/>
-				<Dropdown
-					type="model"
-					headerText={FILTERS.model}
-					carsList={carsFiltered}
+				<Pagination
+					currentPage={currentPage}
+					next={next}
+					prev={prev}
 					goTo={goTo}
-					filters={filters}
-					setFilters={setFilters}
+					maxPage={maxPage}
 				/>
-				<Dropdown
-					type="color"
-					headerText={FILTERS.color}
-					carsList={carsFiltered}
-					goTo={goTo}
-					filters={filters}
-					setFilters={setFilters}
-				/>
-			</FiltersContainer>
-			<List
-				carsList={currentCarsList}
-				selectedCars={selectedCars}
-				setSelectedCars={setSelectedCars}
-			/>
-			<Pagination
-				currentPage={currentPage}
-				next={next}
-				prev={prev}
-				goTo={goTo}
-				maxPage={maxPage}
-			/>
-		</HomeContainer>
+			</HomeContainer>
+		</>
 	);
 }
 
@@ -85,18 +98,23 @@ const HomeContainer = styled.div`
 `;
 
 const HomeNav = styled.div`
-	display: flex;
+	position: relative;
+	padding: 10px;
+	height: 40px;
 	margin-bottom: 25px;
 `;
 
 const HomeTitle = styled.h2`
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	text-align: center;
 	font-size: 21px;
 	font-weight: bold;
 	letter-spacing: 1px;
-	margin: 0 auto;
 `;
 
-const CancelButton = styled.button`
+const GeneralButton = styled.button`
 	background: none;
 	color: var(--cancel-text-color);
 	border: none;
@@ -110,11 +128,16 @@ const CancelButton = styled.button`
 	}
 `;
 
-const ConfirmButton = styled(CancelButton)`
-	color: var(--secondary-text-color);
+const CancelButton = styled(GeneralButton)`
+	position: absolute;
 `;
 
-const ButtonResetFilters = styled(CancelButton)`
+const ConfirmButton = styled(CancelButton)`
+	color: var(--secondary-text-color);
+	right: 0;
+`;
+
+const ButtonResetFilters = styled(GeneralButton)`
 	color: var(--main-text-color);
 	font-size: 10px;
 	border: 2px solid var(--main-text-color);
