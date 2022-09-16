@@ -6,7 +6,7 @@ import usePagination from 'hooks/usePagination';
 import Dropdown from 'components/Dropdown.component';
 import filtersReduce, { initialStateFilters } from 'utils/filtersReduce';
 import filtersApplier from 'utils/filtersApplier';
-import { TITLES, BUTTONS } from './Home.consts';
+import { TITLES, BUTTONS, FILTERS } from './Home.consts';
 import getCars from './Home.service';
 
 export default function Home() {
@@ -17,6 +17,7 @@ export default function Home() {
 
 	const { currentData, currentPage, next, prev, goTo, maxPage } =
 		usePagination(carsFiltered);
+
 	const currentCarsList = currentData();
 
 	return (
@@ -32,25 +33,22 @@ export default function Home() {
 				</ButtonResetFilters>
 				<Dropdown
 					type="UF"
-					headerText="UF"
+					headerText={FILTERS.UF}
 					carsList={carsFiltered}
-					goTo={goTo}
 					filters={filters}
 					setFilters={setFilters}
 				/>
 				<Dropdown
 					type="model"
-					headerText="Modelo"
+					headerText={FILTERS.model}
 					carsList={carsFiltered}
-					goTo={goTo}
 					filters={filters}
 					setFilters={setFilters}
 				/>
 				<Dropdown
 					type="color"
-					headerText="Cor"
+					headerText={FILTERS.color}
 					carsList={carsFiltered}
-					goTo={goTo}
 					filters={filters}
 					setFilters={setFilters}
 				/>
@@ -69,6 +67,7 @@ export default function Home() {
 
 const FiltersContainer = styled.div`
 	display: flex;
+	margin-bottom: 10px;
 `;
 
 const HomeContainer = styled.div`
