@@ -30,9 +30,11 @@ export default function Home() {
 			)}
 			<HomeContainer>
 				<HomeNav>
-					<CancelButton onClick={() => setSelectedCars([])}>
-						{BUTTONS.cancel}
-					</CancelButton>
+					{selectedCars.length > 0 && (
+						<CancelButton onClick={() => setSelectedCars([])}>
+							{BUTTONS.cancel}
+						</CancelButton>
+					)}
 					<HomeTitle>{TITLES.home}</HomeTitle>
 					{selectedCars.length > 0 && (
 						<ConfirmButton onClick={() => setIsModalOpen(true)}>
@@ -99,29 +101,29 @@ const HomeContainer = styled.div`
 
 const HomeNav = styled.div`
 	position: relative;
-	padding: 10px;
+	padding: 10px 0;
 	height: 40px;
 	margin-bottom: 25px;
 `;
 
 const HomeTitle = styled.h2`
 	position: absolute;
-	text-align: center;
-	width: 100%;
-	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	font-size: 21px;
 	font-weight: bold;
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 `;
 
 const GeneralButton = styled.button`
 	background: none;
-	color: var(--cancel-text-color);
 	border: none;
 	font-size: 16px;
 	font-weight: 600;
 	outline: inherit;
 	cursor: pointer;
+	color: var(--main-text-color);
 
 	&:hover {
 		animation: shake 500ms ease-in-out forwards;
@@ -130,15 +132,17 @@ const GeneralButton = styled.button`
 
 const CancelButton = styled(GeneralButton)`
 	position: absolute;
+	left: 0;
+	color: var(--cancel-text-color);
 `;
 
-const ConfirmButton = styled(CancelButton)`
-	color: var(--secondary-text-color);
+const ConfirmButton = styled(GeneralButton)`
+	position: absolute;
 	right: 0;
+	color: var(--secondary-text-color);
 `;
 
 const ButtonResetFilters = styled(GeneralButton)`
-	color: var(--main-text-color);
 	font-size: 10px;
 	border: 2px solid var(--main-text-color);
 	border-radius: 5px;
