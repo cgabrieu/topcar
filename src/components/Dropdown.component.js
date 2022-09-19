@@ -7,9 +7,9 @@ export default function Dropdown({
 	type,
 	headerText,
 	carsList,
-	goTo,
 	filters,
 	setFilters,
+	onChangeFilter,
 }) {
 	const [isOpen, setIsOpen] = useState(false);
 	const ref = useOutsideClick(() => setIsOpen(false));
@@ -19,7 +19,7 @@ export default function Dropdown({
 		.filter((option, i, self) => self.indexOf(option) === i);
 
 	const handleOnClick = (option) => {
-		goTo(1);
+		onChangeFilter();
 		setFilters({ filterType: type, option });
 	};
 

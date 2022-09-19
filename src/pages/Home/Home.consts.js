@@ -5,6 +5,7 @@ const TITLES = {
 const BUTTONS = {
 	cancel: 'Cancelar',
 	confirm: 'Confirmar',
+	resetFilters: 'Resetar filtros',
 };
 
 const FILTERS = {
@@ -13,4 +14,8 @@ const FILTERS = {
 	color: 'Cor',
 };
 
-export { TITLES, BUTTONS, FILTERS };
+const MODAL = {
+	title: 'Selecionados',
+};
+
+export { TITLES, BUTTONS, FILTERS, MODAL };
