@@ -23,6 +23,11 @@ export default function Home() {
 
 	const currentCarsList = currentData();
 
+	const onChangeFilter = () => {
+		setSelectedCars([]);
+		goTo(1);
+	};
+
 	return (
 		<>
 			{isModalOpen && (
@@ -44,7 +49,10 @@ export default function Home() {
 				</HomeNav>
 				<FiltersContainer>
 					<ButtonResetFilters
-						onClick={() => setFilters({ filterType: 'reset' })}
+						onClick={() => {
+							setFilters({ filterType: 'reset' });
+							onChangeFilter();
+						}}
 					>
 						{BUTTONS.resetFilters}
 					</ButtonResetFilters>
@@ -52,25 +60,25 @@ export default function Home() {
 						type="UF"
 						headerText={FILTERS.UF}
 						carsList={carsFiltered}
-						goTo={goTo}
 						filters={filters}
 						setFilters={setFilters}
+						onChangeFilter={onChangeFilter}
 					/>
 					<Dropdown
 						type="model"
 						headerText={FILTERS.model}
 						carsList={carsFiltered}
-						goTo={goTo}
 						filters={filters}
 						setFilters={setFilters}
+						onChangeFilter={onChangeFilter}
 					/>
 					<Dropdown
 						type="color"
 						headerText={FILTERS.color}
 						carsList={carsFiltered}
-						goTo={goTo}
 						filters={filters}
 						setFilters={setFilters}
+						onChangeFilter={onChangeFilter}
 					/>
 				</FiltersContainer>
 				<List
