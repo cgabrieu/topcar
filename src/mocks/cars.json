@@ -6,35 +6,35 @@
 		"model": "E-Pace",
 		"color": "Branco"
 	},
-    {
+	{
 		"id": 2,
 		"name": "Mercedes-Benz GT 3.0 Amg 4p Hibrido",
 		"UF": "SP",
 		"model": "GT",
 		"color": "Azul"
 	},
-    {
+	{
 		"id": 3,
 		"name": "Mercedes-benz C43 3.0 V6 Amg Coupe 4matic 2020",
 		"UF": "SC",
 		"model": "Classe C",
 		"color": "Preto"
 	},
-    {
+	{
 		"id": 4,
 		"name": "Bmw 320i 2.0 16v Turbo M Sport 2021",
 		"UF": "ES",
 		"model": "320i",
 		"color": "Preto"
 	},
-    {
+	{
 		"id": 5,
 		"name": "BMW X5 Xdrive 30d 3.0 258cv",
 		"UF": "MG",
 		"model": "X5",
 		"color": "Branco"
 	},
-    {
+	{
 		"id": 6,
 		"name": "Audi Q3 2.0 Tfsi Attraction",
 		"UF": "RS",
@@ -43,128 +43,338 @@
 	},
 	{
 		"id": 7,
-		"name": "Jaguar 2.0 16V P250 R-DYNAMIC S AWD",
-		"UF": "RJ",
-		"model": "E-Pace",
-		"color": "Branco"
-	},
-    {
-		"id": 8,
-		"name": "Mercedes-Benz GT 3.0 Amg 4p Hibrido",
+		"name": "Mercedes-Benz CLA 250 2.0 SPORT 16V TURBO",
 		"UF": "SP",
-		"model": "GT",
-		"color": "Azul"
+		"model": "CLA 250",
+		"color": "Preto"
 	},
-    {
+	{
+		"id": 8,
+		"name": "Mercedes-Benz CLA 250 2.0 SPORT 16V TURBO",
+		"UF": "SP",
+		"model": "CLA 250",
+		"color": "Vermelho"
+	},
+	{
 		"id": 9,
-		"name": "Mercedes-benz C43 3.0 V6 Amg Coupe 4matic 2020",
+		"name": "Land Rover Discovery sport 2.0 16V SI4 TURBO HSE",
 		"UF": "SC",
-		"model": "Classe C",
-		"color": "Preto"
-	},
-    {
-		"id": 10,
-		"name": "Bmw 320i 2.0 16v Turbo M Sport 2021",
-		"UF": "ES",
-		"model": "320i",
-		"color": "Preto"
-	},
-    {
-		"id": 11,
-		"name": "BMW X5 Xdrive 30d 3.0 258cv",
-		"UF": "MG",
-		"model": "X5",
+		"model": "Discovery sport",
 		"color": "Branco"
 	},
-    {
+	{
+		"id": 10,
+		"name": "Land Rover Discovery sport 2.0 16V TD4 TURBO HSE",
+		"UF": "MG",
+		"model": "Discovery sport",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 11,
+		"name": "Land Rover Discovery sport Discovery Sport 2.2 SD4 SE 4WD",
+		"UF": "RJ",
+		"model": "Discovery sport",
+		"color": "Branco"
+	},
+	{
 		"id": 12,
-		"name": "Audi Q3 2.0 Tfsi Attraction",
-		"UF": "RS",
-		"model": "Q3",
-		"color": "Vermelho"
+		"name": "Mercedes-Benz GLE 350d 3.0 V6 BLUETEC SPORT",
+		"UF": "RJ",
+		"model": "GLE 350d",
+		"color": "Branco"
 	},
 	{
 		"id": 13,
-		"name": "Jaguar 2.0 16V P250 R-DYNAMIC S AWD",
+		"name": "Land Rover Discovery sport 2.2 16V SD4 TURBO SE",
 		"UF": "RJ",
-		"model": "E-Pace",
-		"color": "Branco"
+		"model": "Discovery sport",
+		"color": "Cinza-escuro"
 	},
-    {
-		"id": 14,
-		"name": "Mercedes-Benz GT 3.0 Amg 4p Hibrido",
-		"UF": "SP",
-		"model": "GT",
-		"color": "Azul"
-	},
-    {
-		"id": 15,
-		"name": "Mercedes-benz C43 3.0 V6 Amg Coupe 4matic 2020",
-		"UF": "SC",
-		"model": "Classe C",
-		"color": "Preto"
-	},
-    {
-		"id": 16,
-		"name": "Bmw 320i 2.0 16v Turbo M Sport 2021",
+	{
+		"id":14,
+		"name": "BMW X2 2.0 16V TURBO SDRIVE20I GP",
 		"UF": "ES",
-		"model": "320i",
+		"model": "X2",
 		"color": "Preto"
 	},
-    {
-		"id": 17,
-		"name": "BMW X5 Xdrive 30d 3.0 258cv",
+	{
+		"id": 15,
+		"name": "BMW X1 2.0 16V TURBO SDRIVE20I M SPORT 4P",
+		"UF": "SC",
+		"model": "X1",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 16,
+		"name": "Land Rover Discovery sport 2.0 16V TD4 TURBO HSE",
 		"UF": "MG",
-		"model": "X5",
+		"model": "Discovery sport",
+		"color": "Preto"
+	},
+	{
+		"id": 17,
+		"name": "Mercedes-Benz GLC 250 2.0 16V CGI",
+		"UF": "RJ",
+		"model": "GLC 250",
 		"color": "Branco"
 	},
-    {
+	{
 		"id": 18,
-		"name": "Audi Q3 2.0 Tfsi Attraction",
-		"UF": "RS",
-		"model": "Q3",
-		"color": "Vermelho"
+		"name": "BMW X4 2.0 16V XDRIVE30I M SPORT",
+		"UF": "ES",
+		"model": "X4",
+		"color": "Preto"
 	},
 	{
 		"id": 19,
-		"name": "Jaguar 2.0 16V P250 R-DYNAMIC S AWD",
-		"UF": "RJ",
-		"model": "E-Pace",
+		"name": "BMW X1 2.0 16V TURBO SDRIVE20I M SPORT 4P",
+		"UF": "SC",
+		"model": "X1",
 		"color": "Branco"
 	},
-    {
+	{
 		"id": 20,
-		"name": "Mercedes-Benz GT 3.0 Amg 4p Hibrido",
+		"name": "Mitsubishi Outlander Sport 2.0 MIVEC HPE BLACK EDITION AWD",
+		"UF": "SC",
+		"model": "Outlander Sport",
+		"color": "Branco"
+	},
+	{
+		"id": 21,
+		"name": "BMW Serie 4 2.0 Sport Gp Aut. 2p 184 hp",
 		"UF": "SP",
-		"model": "GT",
+		"model": "Serie 4",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 22,
+		"name": "BMW Serie 2 1.5 Sport Gp Aut. 4p",
+		"UF": "PR",
+		"model": "Serie 2",
+		"color": "Preto"
+	},
+	{
+		"id": 23,
+		"name": "BMW Z4 2.0 Sdrive30i M Sport 2p",
+		"UF": "PR",
+		"model": "Z4",
+		"color": "Branco"
+	},
+	{
+		"id": 24,
+		"name": "Mercedes-Benz Classe E 3.0 Avantgarde Sport 4p",
+		"UF": "RJ",
+		"model": "Classe E",
+		"color": "Branco"
+	},
+	{
+		"id": 25,
+		"name": "Mitsubishi L200 2.4 Triton Sport Hpe Cab. Dupla 4x4 Aut. 4p",
+		"UF": "MG",
+		"model": "L200",
+		"color": "Vermelho"
+	},
+	{
+		"id": 26,
+		"name": "BMW Serie 3 2.0 Sport Active Flex Aut. 4p",
+		"UF": "SC",
+		"model": "Serie 3",
+		"color": "Branco"
+	},
+	{
+		"id": 27,
+		"name": "Mitsubishi L200 2.4 Triton Sport Hpe S Cab. Dupla 4x4 Aut. 4p",
+		"UF": "ES",
+		"model": "L200",
+		"color": "Branco"
+	},
+	{
+		"id": 28,
+		"name": "Land Rover Range Rover Sport 5.0 V8 Svr Supercharged 5p",
+		"UF": "SC",
+		"model": "Range Rover Sport",
+		"color": "Branco"
+	},
+	{
+		"id": 29,
+		"name": "Mitsubishi Pajero Sport 2.4 Hpe 4wd 5p",
+		"UF": "SC",
+		"model": "Pajero Sport",
+		"color": "Preto"
+	},
+	{
+		"id": 30,
+		"name": "BMW Serie 3 2.0 M Sport Aut. 5p",
+		"UF": "RJ",
+		"model": "Serie 3",
+		"color": "Branco"
+	},
+	{
+		"id": 31,
+		"name": "Mitsubishi L200 2.4 Triton Sport Hpe S Cab. Dupla 4x4 Aut. 4p",
+		"UF": "ES",
+		"model": "L200",
+		"color": "Branco"
+	},
+	{
+		"id": 32,
+		"name": "Land Rover Discovery sport 2.0 Si4 Hse 5p (br)",
+		"UF": "MG",
+		"model": "Discovery sport",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 33,
+		"name": "Jaguar XE 2.0 R-sport 200cv 4p",
+		"UF": "MG",
+		"model": "XE",
+		"color": "Preto"
+	},
+	{
+		"id": 34,
+		"name": "Land Rover Discovery Sport 2.0 Si4 Se 5p (br)",
+		"UF": "MG",
+		"model": "Discovery Sport",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 35,
+		"name": "Land Rover Discovery sport 2.0 Si4 Se 5p (br)",
+		"UF": "MG",
+		"model": "Discovery sport",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 36,
+		"name": "Land Rover Discovery sport Discovery Sport HSE Lux. 2.0 4x4 /Flex",
+		"UF": "RJ",
+		"model": "Discovery sport",
 		"color": "Azul"
 	},
-    {
-		"id": 21,
-		"name": "Mercedes-benz C43 3.0 V6 Amg Coupe 4matic 2020",
-		"UF": "SC",
-		"model": "Classe C",
+	{
+		"id": 37,
+		"name": "BMW X4 3.0 M Sport 35i 4x4 24v Tb",
+		"UF": "SP",
+		"model": "X4",
 		"color": "Preto"
 	},
-    {
-		"id": 22,
-		"name": "Bmw 320i 2.0 16v Turbo M Sport 2021",
-		"UF": "ES",
-		"model": "320i",
-		"color": "Preto"
-	},
-    {
-		"id": 23,
-		"name": "BMW X5 Xdrive 30d 3.0 258cv",
-		"UF": "MG",
-		"model": "X5",
+	{
+		"id": 38,
+		"name": "Land Rover Discovery Sport 2.0 Si4 Hse Luxury 5p",
+		"UF": "RJ",
+		"model": "Discovery Sport",
 		"color": "Branco"
 	},
-    {
-		"id": 24,
-		"name": "Audi Q3 2.0 Tfsi Attraction",
-		"UF": "RS",
-		"model": "Q3",
-		"color": "Vermelho"
+	{
+		"id": 39,
+		"name": "Land Rover Discovery sport 2.0 Si4 Hse 5p (br)",
+		"UF": "MG",
+		"model": "Discovery sport",
+		"color": "Cinza"
+	},
+	{
+		"id": 40,
+		"name": "Land Rover Discovery sport 2.0 16V TD4 TURBO DIESEL SE 4P AUTOMÁTICO",
+		"UF": "SC",
+		"model": "Discovery sport",
+		"color": "Branco"
+	},
+	{
+		"id": 41,
+		"name": "Land Rover Range Rover Sport 3.0 HSE 4X4 V6 24V BITURBO DIESEL 4P AUTOMÁTICO",
+		"UF": "PR",
+		"model": "Range Rover Sport",
+		"color": "Preto"
+	},
+	{
+		"id": 42,
+		"name": "Land Rover Discovery sport Discovery Sport 2.0 Si4 SE 4WD",
+		"UF": "MG",
+		"model": "Discovery sport",
+		"color": "Prateado"
+	},
+	{
+		"id": 43,
+		"name": "Land Rover Discovery Sport 2.0 Si4 Hse 5p",
+		"UF": "RJ",
+		"model": "Discovery Sport",
+		"color": "Preto"
+	},
+	{
+		"id": 44,
+		"name": "BMW Serie 4 2.0 M Sport Aut. 2p",
+		"UF": "SC",
+		"model": "Serie 4",
+		"color": "Preto"
+	},
+	{
+		"id": 45,
+		"name": "BMW X1 XDRIVE 25i Sport 2.0/2.0 Flex Aut.",
+		"UF": "MG",
+		"model": "X1",
+		"color": "Preto"
+	},
+	{
+		"id": 46,
+		"name": "BMW X1 XDRIVE 25i Sport 2.0/2.0 Flex Aut.",
+		"UF": "MG",
+		"model": "X1",
+		"color": "Preto"
+	},
+	{
+		"id": 47,
+		"name": "BMW X1 2.0 Sdrive20i X-line Active Flex 5p",
+		"UF": "SC",
+		"model": "X1",
+		"color": "Branco"
+	},
+	{
+		"id": 48,
+		"name": "BMW X1 2.0 Sdrive20i X-line Active Flex 5p",
+		"UF": "SC",
+		"model": "X1",
+		"color": "Branco"
+	},
+	{
+		"id": 49,
+		"name": "Jeep Compass 1.3 Sport Turbo Flex Aut. (t270) 5p",
+		"UF": "SC",
+		"model": "Compass",
+		"color": "Verde"
+	},
+	{
+		"id": 50,
+		"name": "BMW 335I 3.0 m Sport 24v Gasolina 4p Automático",
+		"UF": "PR",
+		"model": "335I",
+		"color": "Cinza"
+	},
+	{
+		"id": 51,
+		"name": "BMW Serie 5 528IA M SPORT 2.0 TURBO 16V 245CV 4P GASOLINA",
+		"UF": "PR",
+		"model": "Serie 5",
+		"color": "Prateado"
+	},
+	{
+		"id": 52,
+		"name": "BMW X3 3.0 35i m Sport 4x4 24v Gasolina 4p Automático",
+		"UF": "SP",
+		"model": "X3",
+		"color": "Cinza"
+	},
+	{
+		"id": 53,
+		"name": "Jaguar XE 2.0 16v Si4 Turbo R-sport",
+		"UF": "SC",
+		"model": "XE",
+		"color": "Cinza"
+	},
+	{
+		"id": 54,
+		"name": "Land Rover Range Rover Sport 3.0 Hse 4x4 v6 24v Turbo Diesel 4p Automático",
+		"UF": "ES",
+		"model": "Range Rover Sport",
+		"color": "Preto"
 	}
 ]
