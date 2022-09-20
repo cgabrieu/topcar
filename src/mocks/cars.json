@@ -91,7 +91,7 @@
 		"color": "Cinza-escuro"
 	},
 	{
-		"id":14,
+		"id": 14,
 		"name": "BMW X2 2.0 16V TURBO SDRIVE20I GP",
 		"UF": "ES",
 		"model": "X2",
@@ -376,5 +376,341 @@
 		"UF": "ES",
 		"model": "Range Rover Sport",
 		"color": "Preto"
+	},
+	{
+		"id": 55,
+		"name": "Mercedes-Benz GLA 200 1.6 CGI FLEX ENDURO 7G-DCT",
+		"UF": "SP",
+		"model": "GLA 200",
+		"color": "Preto"
+	},
+	{
+		"id": 56,
+		"name": "Jeep Compass 2.0 16V DIESEL S 4X4 AUTOMÁTICO",
+		"UF": "ES",
+		"model": "Compass",
+		"color": "Marrom"
+	},
+	{
+		"id": 57,
+		"name": "Toyota Hilux SW4 2.8 D-4D TURBO DIESEL SRX 7L 4X4 AUTOMÁTICO",
+		"UF": "ES",
+		"model": "Hilux SW4",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 58,
+		"name": "Toyota Hilux SW4 2.8 SRX 4X4 7 LUGARES 16V TURBO INTERCOOLER DIESEL 4P AUTOMÁTICO",
+		"UF": "SP",
+		"model": "Hilux SW4",
+		"color": "Prata"
+	},
+	{
+		"id": 59,
+		"name": "Jaguar E-pace 2.0 16v P250 Flex R-dynamic S Awd Automático",
+		"UF": "RJ",
+		"model": "E-Pace",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 60,
+		"name": "Toyota SW4 2.8 Tdi Srx 7l 4x4 Aut. 5p",
+		"UF": "SC",
+		"model": "SW4",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 61,
+		"name": "Toyota SW4 2.7 Sr 7l 4x2 Flex Aut. 5p",
+		"UF": "RS",
+		"model": "SW4",
+		"color": "Preto"
+	},
+	{
+		"id": 62,
+		"name": "Mercedes-Benz Classe GLC 2.0 Turbo 4matic 5p",
+		"UF": "SP",
+		"model": "Classe GLC",
+		"color": "Gasolina"
+	},
+	{
+		"id": 63,
+		"name": "BMW X1 2.0 Sdrive20i X-line Active Flex 5p 8 marchas",
+		"UF": "ES",
+		"model": "X1",
+		"color": "Preto"
+	},
+	{
+		"id": 64,
+		"name": "Volkswagen Taos 1.4 250 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO",
+		"UF": "RS",
+		"model": "Taos",
+		"color": "Cinza"
+	},
+	{
+		"id": 65,
+		"name": "Land Rover Defender 2.5 Std 110 4x4 Turbo Diesel 4p Manual",
+		"UF": "RS",
+		"model": "Defender",
+		"color": "Verde"
+	},
+	{
+		"id": 66,
+		"name": "Land Rover Defender 2.5 Csw 110 4x4 Turbo Diesel 4p Manual",
+		"UF": "MG",
+		"model": "Defender",
+		"color": "Verde"
+	},
+	{
+		"id": 67,
+		"name": "Volkswagen Tiguan 2.0 350 Tsi Gasolina Allspace R-line 4moti",
+		"UF": "SP",
+		"model": "Tiguan",
+		"color": "Branco"
+	},
+	{
+		"id": 68,
+		"name": "Toyota Hilux Sw4 3.0 Srv 4x4 7 Lugares 16v Turbo Intercooler",
+		"UF": "MG",
+		"model": "Hilux SW4",
+		"color": "Preto"
+	},
+	{
+		"id": 69,
+		"name": "Toyota Hilux Sw4 2.7 Srv 7 Lugares 4x2 16v Flex 4p Automátic",
+		"UF": "SP",
+		"model": "Hilux SW4",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 70,
+		"name": "Jeep Compass 2.0 16v Diesel Limited 4x4 Automático",
+		"UF": "RJ",
+		"model": "Compass",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 71,
+		"name": "Volkswagen Tiguan 2.0 350 Tsi Gasolina Allspace R-line 4moti",
+		"UF": "RJ",
+		"model": "Tiguan",
+		"color": "Preto"
+	},
+	{
+		"id": 72,
+		"name": "Land Rover Range Rover Evoque 2.0 P250 Flex R-dynamic Se Awd",
+		"UF": "RJ",
+		"model": "Range Rover Evoque",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 73,
+		"name": "Jeep Compass 2.0 16v Diesel Limited 4x4 Automático",
+		"UF": "RJ",
+		"model": "Compass",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 74,
+		"name": "Porsche Cayenne 4.8 S 4x4 V8 32v Gasolina 4p Tiptronic",
+		"UF": "RS",
+		"model": "Cayenne",
+		"color": "Preto"
+	},
+	{
+		"id": 75,
+		"name": "Toyota Hilux Sw4 2.7 Sr 7 Lugares 4x2 16v Flex 4p Automático",
+		"UF": "RS",
+		"model": "Hilux SW4",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 76,
+		"name": "Volkswagen Tiguan 2.0 350 Tsi Gasolina Allspace R-line 4moti",
+		"UF": "SP",
+		"model": "Tiguan",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 77,
+		"name": "Land Rover Range Rover Evoque 2.0 Hse Dynamic 4wd 16v Gasoli",
+		"UF": "RS",
+		"model": "Range Rover Evoque",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 78,
+		"name": "Audi Q3 1.4 35 Tfsi Gasolina Prestige Plus S Tronic",
+		"UF": "ES",
+		"model": "Q3",
+		"color": "Prateado"
+	},
+	{
+		"id": 79,
+		"name": "Toyota Corolla Cross 2.0 Vvt-ie Flex Xre Direct Shift",
+		"UF": "RS",
+		"model": "Corolla Cross",
+		"color": "Prateado"
+	},
+	{
+		"id": 80,
+		"name": "Volkswagen Tiguan 2.0 350 Tsi Gasolina Allspace R-line 4moti",
+		"UF": "RJ",
+		"model": "Tiguan",
+		"color": "Vermelho"
+	},
+	{
+		"id": 81,
+		"name": "Volkswagen Tiguan 2.0 350 Tsi Gasolina Allspace R-line 4moti",
+		"UF": "RJ",
+		"model": "Tiguan",
+		"color": "Vermelho"
+	},
+	{
+		"id": 82,
+		"name": "Volkswagen Tiguan 2.0 350 Tsi Gasolina Allspace R-line 4moti",
+		"UF": "SP",
+		"model": "Tiguan",
+		"color": "Branco"
+	},
+	{
+		"id": 83,
+		"name": "Audi Q5 2.0 Tfsi Gasolina Ambiente S Tronic",
+		"UF": "RS",
+		"model": "Q5",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 84,
+		"name": "Toyota Hilux Sw4 2.8 Srx 4x4 7 Lugares 16v Turbo Intercooler",
+		"UF": "SP",
+		"model": "Hilux SW4",
+		"color": "Preto"
+	},
+	{
+		"id": 85,
+		"name": "Land Rover Discovery",
+		"UF": "PR",
+		"model": "Discovery",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 86,
+		"name": "Novo Kia Sportage Ex Prestige 2022/2023",
+		"UF": "RS",
+		"model": "Sportage",
+		"color": "Branco"
+	},
+	{
+		"id": 87,
+		"name": "Novo Kia Sportage Ex 2022/2023",
+		"UF": "RS",
+		"model": "Sportage",
+		"color": "Preto"
+	},
+	{
+		"id": 88,
+		"name": "Mercedes Glb Progressive 1.3 Turbo",
+		"UF": "ES",
+		"model": "GLB PRIGRESSIVE",
+		"color": "Branco"
+	},
+	{
+		"id": 89,
+		"name": "Rav4 2.5 Vvt-ie Hybrid S Awd Cvt",
+		"UF": "SP",
+		"model": "RAV4",
+		"color": "Cinza"
+	},
+	{
+		"id": 90,
+		"name": "Q8 3.0 Tfsi Gasolina Performance Black Quattro Tiptronic",
+		"UF": "ES",
+		"model": "Q8",
+		"color": "Preto"
+	},
+	{
+		"id": 91,
+		"name": "Equinox 1.5 16v Turbo Gasolina Premier Awd Automático",
+		"UF": "RS",
+		"model": "Equinox",
+		"color": "Branco"
+	},
+	{
+		"id": 92,
+		"name": "Lexus Rx350 F-sport",
+		"UF": "SC",
+		"model": "RX350 F-SPORT",
+		"color": "Preto"
+	},
+	{
+		"id": 93,
+		"name": "Bmw X6 4.4 M Sport 4x4 Coupé V8 32v Bi-turbo Gasolina 4p Aut",
+		"UF": "PR",
+		"model": "X6",
+		"color": "Branco"
+	},
+	{
+		"id": 94,
+		"name": "Jeep Compass 1.3 T270 Turbo Flex S At6",
+		"UF": "RS",
+		"model": "Compass",
+		"color": "Cinza-escuro"
+	},
+	{
+		"id": 95,
+		"name": "Rav4 2.5 Vvt-ie Hybrid Sx Awd Cvt",
+		"UF": "SP",
+		"model": "RAV4",
+		"color": "Preto"
+	},
+	{
+		"id": 96,
+		"name": "Rav4 2.5 Vvt-ie Hybrid S Connect Awd Cvt",
+		"UF": "RJ",
+		"model": "RAV4",
+		"color": "Branco"
+	},
+	{
+		"id": 97,
+		"name": "Ford Edge 2.7 V6 ECOBOOST GASOLINA ST AWD AUTOMÁTICO",
+		"UF": "SP",
+		"model": "Edge",
+		"color": "Branco"
+	},
+	{
+		"id": 98,
+		"name": "Honda CR-V VTC TURBO TOURING AWD",
+		"UF": "SP",
+		"model": "CR-V",
+		"color": "Gasolina"
+	},
+	{
+		"id": 99,
+		"name": "Volvo XC60 2.0 T5 GASOLINA MOMENTUM AWD GEARTRONIC",
+		"UF": "SP",
+		"model": "XC60",
+		"color": "Azul"
+	},
+	{
+		"id": 100,
+		"name": "Volkswagen Tiguan 350 Tsi Allspace R-line - 121098",
+		"UF": "SP",
+		"model": "Tiguan",
+		"color": "Gasolina"
+	},
+	{
+		"id": 101,
+		"name": "Volkswagen Tiguan 350 Tsi Allspace R-line - 181253",
+		"UF": "RJ",
+		"model": "Tiguan",
+		"color": "Gasolina"
+	},
+	{
+		"id": 102,
+		"name": "Hilux Sw4 2.8 Srx 4x4 7 Lugares 16v Turbo Intercooler Diese",
+		"UF": "RJ",
+		"model": "Hilux SW4",
+		"color": "Prata"
 	}
 ]
