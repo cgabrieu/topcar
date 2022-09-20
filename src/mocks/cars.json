@@ -431,7 +431,7 @@
 		"name": "Mercedes-Benz Classe GLC 2.0 Turbo 4matic 5p",
 		"UF": "SP",
 		"model": "Classe GLC",
-		"color": "Gasolina"
+		"color": "Branco"
 	},
 	{
 		"id": 63,
@@ -683,7 +683,7 @@
 		"name": "Honda CR-V VTC TURBO TOURING AWD",
 		"UF": "SP",
 		"model": "CR-V",
-		"color": "Gasolina"
+		"color": "Branco"
 	},
 	{
 		"id": 99,
@@ -697,14 +697,14 @@
 		"name": "Volkswagen Tiguan 350 Tsi Allspace R-line - 121098",
 		"UF": "SP",
 		"model": "Tiguan",
-		"color": "Gasolina"
+		"color": "Branco"
 	},
 	{
 		"id": 101,
 		"name": "Volkswagen Tiguan 350 Tsi Allspace R-line - 181253",
 		"UF": "RJ",
 		"model": "Tiguan",
-		"color": "Gasolina"
+		"color": "Branco"
 	},
 	{
 		"id": 102,
