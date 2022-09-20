@@ -1,16 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { ReactComponent as MarkIcon } from 'assets/icons/mark.svg';
+import Checkbox from './Checkbox.component';
 
-export default function ListItem({ car, selectedCars, setSelectedCars }) {
+export default function ListItem({
+	car,
+	currentPage,
+	selectedCars,
+	setSelectedCars,
+}) {
 	const navigate = useNavigate();
 
+	const currentPageSelectedCars = selectedCars[currentPage];
+	const isSelected = currentPageSelectedCars?.includes(car);
+
 	const handleOnSelect = () => {
-		if (selectedCars.includes(car)) {
-			setSelectedCars(selectedCars.filter((currCar) => currCar !== car));
+		if (isSelected) {
+			setSelectedCars({
+				...selectedCars,
+				[currentPage]: currentPageSelectedCars.filter(
+					(currCar) => currCar !== car
+				),
+			});
 		} else {
-			setSelectedCars([...selectedCars, car]);
+			setSelectedCars({
+				...selectedCars,
+				[currentPage]: [...(currentPageSelectedCars || []), car],
+			});
 		}
 	};
 
@@ -24,19 +40,10 @@ export default function ListItem({ car, selectedCars, setSelectedCars }) {
 					<Tag>{car.color}</Tag>
 				</TagContainer>
 			</ContentContainer>
-			<Checkbox onClick={handleOnSelect}>
-				{selectedCars.includes(car) && <MarkIcon />}
-			</Checkbox>
+			<Checkbox isSelected={isSelected} handleOnSelect={handleOnSelect} />
 		</ItemContainer>
 	);
 }
-
-const Checkbox = styled.div`
-	cursor: pointer;
-	min-width: 25px;
-	height: 25px;
-	border: 3px solid var(--main-text-color);
-`;
 
 const ContentContainer = styled.div`
 	height: 100%;
