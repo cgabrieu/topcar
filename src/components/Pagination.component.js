@@ -42,5 +42,5 @@ const ButtonArrow = styled.div`
 const GoToLabel = styled(ButtonArrow)`
 	font-size: 13px;
 	background-color: ${({ isSelected }) => isSelected && 'var(--secondary-text-color)'};
-	color: ${({ isSelected }) => isSelected && 'var(--light-color)'};
+	color: ${({ isSelected }) => isSelected && 'var(--white-color)'};
 `;
