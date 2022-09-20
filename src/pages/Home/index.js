@@ -8,11 +8,12 @@ import filtersReduce, { initialStateFilters } from 'utils/filtersReduce';
 import filtersApplier from 'utils/filtersApplier';
 import Modal from 'components/Modal.component';
 import Navbar from 'components/Navbar.component';
+import Checkbox from 'components/Checkbox.component';
 import { BUTTONS, FILTERS } from './Home.consts';
-import { getCars }  from './Home.service';
+import { getCars } from './Home.service';
 
 export default function Home() {
-	const [selectedCars, setSelectedCars] = useState([]);
+	const [selectedCars, setSelectedCars] = useState({});
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [filters, setFilters] = useReducer(filtersReduce, initialStateFilters);
 
@@ -23,10 +24,26 @@ export default function Home() {
 		usePagination(carsFiltered);
 
 	const currentCarsList = currentData();
+	const areAllSelected =
+		selectedCars[currentPage]?.length === currentCarsList.length;
 
 	const onChangeFilter = () => {
 		setSelectedCars([]);
 		goTo(1);
+	};
+
+	const handleOnSelectAll = () => {
+		if (areAllSelected) {
+			setSelectedCars({
+				...selectedCars,
+				[currentPage]: [],
+			});
+		} else {
+			setSelectedCars({
+				...selectedCars,
+				[currentPage]: currentCarsList,
+			});
+		}
 	};
 
 	return (
@@ -38,7 +55,7 @@ export default function Home() {
 			/>
 			<HomeContainer>
 				<Navbar>
-					{selectedCars.length > 0 && (
+					{Object.values(selectedCars).length > 0 && (
 						<>
 							<CancelButton onClick={() => setSelectedCars([])}>
 								{BUTTONS.cancel}
@@ -82,9 +99,14 @@ export default function Home() {
 						setFilters={setFilters}
 						onChangeFilter={onChangeFilter}
 					/>
+					<Checkbox
+						isSelected={areAllSelected}
+						handleOnSelect={handleOnSelectAll}
+					/>
 				</FiltersContainer>
 				<List
 					carsList={currentCarsList}
+					currentPage={currentPage}
 					selectedCars={selectedCars}
 					setSelectedCars={setSelectedCars}
 				/>
