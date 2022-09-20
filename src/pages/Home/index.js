@@ -7,8 +7,9 @@ import List from 'components/List.component';
 import filtersReduce, { initialStateFilters } from 'utils/filtersReduce';
 import filtersApplier from 'utils/filtersApplier';
 import Modal from 'components/Modal.component';
-import { TITLES, BUTTONS, FILTERS } from './Home.consts';
-import getCars from './Home.service';
+import Navbar from 'components/Navbar.component';
+import { BUTTONS, FILTERS } from './Home.consts';
+import { getCars }  from './Home.service';
 
 export default function Home() {
 	const [selectedCars, setSelectedCars] = useState([]);
@@ -30,23 +31,24 @@ export default function Home() {
 
 	return (
 		<>
-			{isModalOpen && (
-				<Modal selectedCars={selectedCars} setIsModalOpen={setIsModalOpen} />
-			)}
+			<Modal
+				selectedCars={selectedCars}
+				isModalOpen={isModalOpen}
+				setIsModalOpen={setIsModalOpen}
+			/>
 			<HomeContainer>
-				<HomeNav>
+				<Navbar>
 					{selectedCars.length > 0 && (
-						<CancelButton onClick={() => setSelectedCars([])}>
-							{BUTTONS.cancel}
-						</CancelButton>
+						<>
+							<CancelButton onClick={() => setSelectedCars([])}>
+								{BUTTONS.cancel}
+							</CancelButton>
+							<ConfirmButton onClick={() => setIsModalOpen(true)}>
+								{BUTTONS.confirm}
+							</ConfirmButton>
+						</>
 					)}
-					<HomeTitle>{TITLES.home}</HomeTitle>
-					{selectedCars.length > 0 && (
-						<ConfirmButton onClick={() => setIsModalOpen(true)}>
-							{BUTTONS.confirm}
-						</ConfirmButton>
-					)}
-				</HomeNav>
+				</Navbar>
 				<FiltersContainer>
 					<ButtonResetFilters
 						onClick={() => {
@@ -105,23 +107,6 @@ const FiltersContainer = styled.div`
 
 const HomeContainer = styled.div`
 	width: 100%;
-`;
-
-const HomeNav = styled.div`
-	position: relative;
-	padding: 10px 0;
-	height: 40px;
-	margin-bottom: 25px;
-`;
-
-const HomeTitle = styled.h2`
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 21px;
-	font-weight: bold;
-	letter-spacing: 2px;
 `;
 
 const GeneralButton = styled.button`
