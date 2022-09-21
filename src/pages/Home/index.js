@@ -1,26 +1,22 @@
-import React, { useReducer, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import Pagination from 'components/Pagination.component';
-import usePagination from 'hooks/usePagination';
 import Dropdown from 'components/Dropdown.component';
 import List from 'components/List.component';
-import filtersReduce, { initialStateFilters } from 'utils/filtersReduce';
-import filtersApplier from 'utils/filtersApplier';
 import Modal from 'components/Modal.component';
 import Navbar from 'components/Navbar.component';
+import { ListContext } from 'contexts/ListCars.context';
 import { BUTTONS, FILTERS } from './Home.consts';
-import { getCars }  from './Home.service';
 
 export default function Home() {
-	const [selectedCars, setSelectedCars] = useState([]);
+	const { selectedCarsValues, filtersValues, paginationValues } =
+		useContext(ListContext);
 	const [isModalOpen, setIsModalOpen] = useState(false);
-	const [filters, setFilters] = useReducer(filtersReduce, initialStateFilters);
 
-	const carsList = getCars().data;
-	const carsFiltered = filtersApplier(carsList, filters);
-
+	const { selectedCars, setSelectedCars } = selectedCarsValues;
+	const { filters, setFilters, carsFiltered } = filtersValues;
 	const { currentData, currentPage, next, prev, goTo, maxPage } =
-		usePagination(carsFiltered);
+		paginationValues;
 
 	const currentCarsList = currentData();
 
