@@ -23,6 +23,8 @@ export default function Home() {
 	const areAllSelected =
 		selectedCars[currentPage]?.length === currentCarsList.length;
 
+	const selectedCarsSummary = Object.values(selectedCars).flat();
+
 	const onChangeFilter = () => {
 		setSelectedCars([]);
 		goTo(1);
@@ -45,15 +47,15 @@ export default function Home() {
 	return (
 		<>
 			<Modal
-				selectedCars={selectedCars}
+				selectedCarsSummary={selectedCarsSummary}
 				isModalOpen={isModalOpen}
 				setIsModalOpen={setIsModalOpen}
 			/>
 			<HomeContainer>
 				<Navbar>
-					{Object.values(selectedCars).length > 0 && (
+					{selectedCarsSummary.length > 0 && (
 						<>
-							<CancelButton onClick={() => setSelectedCars([])}>
+							<CancelButton onClick={() => setSelectedCars({})}>
 								{BUTTONS.cancel}
 							</CancelButton>
 							<ConfirmButton onClick={() => setIsModalOpen(true)}>

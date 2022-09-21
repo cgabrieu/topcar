@@ -7,7 +7,7 @@ import filtersReduce, { initialStateFilters } from 'utils/filtersReduce';
 export const ListContext = createContext();
 
 export default function ListCarsProvider({ children }) {
-	const [selectedCars, setSelectedCars] = useState([]);
+	const [selectedCars, setSelectedCars] = useState({});
 	const [filters, setFilters] = useReducer(filtersReduce, initialStateFilters);
 
 	const carsList = getCars().data;

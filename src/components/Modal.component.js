@@ -3,7 +3,11 @@ import styled from 'styled-components';
 import { ReactComponent as CloseIcon } from 'assets/icons/close.svg';
 import { MODAL } from 'pages/Home/Home.consts';
 
-export default function Modal({ selectedCars, isModalOpen, setIsModalOpen }) {
+export default function Modal({
+	selectedCarsSummary,
+	isModalOpen,
+	setIsModalOpen,
+}) {
 	if (isModalOpen)
 		return (
 			<ModalContainer>
@@ -11,7 +15,7 @@ export default function Modal({ selectedCars, isModalOpen, setIsModalOpen }) {
 					<CloseModalIcon onClick={() => setIsModalOpen(false)} />
 					<h3>{MODAL.title}</h3>
 					<ModalContent>
-						{selectedCars.map(({ id, name }) => (
+						{selectedCarsSummary.map(({ id, name }) => (
 							<p key={id}>✓ {name}</p>
 						))}
 					</ModalContent>
