@@ -1,24 +1,18 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import BaseContainer from 'components/Base.container';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from 'pages/Home';
 import CarDetail from 'pages/CarDetail';
-
-const router = createBrowserRouter([
-	{
-		path: '/',
-		element: <Home />,
-	},
-	{
-		path: '/car/:carId',
-		element: <CarDetail />,
-	},
-]);
+import BaseContainer from 'components/Base.container';
 
 export default function App() {
 	return (
-		<BaseContainer>
-			<RouterProvider router={router} />
-		</BaseContainer>
+		<BrowserRouter>
+			<BaseContainer>
+				<Routes>
+					<Route index element={<Home />} />
+					<Route path="car/:carId" element={<CarDetail />} />
+				</Routes>
+			</BaseContainer>
+		</BrowserRouter>
 	);
 }
