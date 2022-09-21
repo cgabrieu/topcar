@@ -6,4 +6,8 @@ function getCars() {
 	};
 }
 
-export default getCars;
+function getCarById(id) {
+	return MOCK_CARS.find((car) => car.id === parseInt(id, 10));
+}
+
+export { getCars, getCarById };

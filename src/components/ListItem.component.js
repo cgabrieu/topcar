@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import { ReactComponent as MarkIcon } from 'assets/icons/mark.svg';
 
 export default function ListItem({ car, selectedCars, setSelectedCars }) {
+	const navigate = useNavigate();
+
 	const handleOnSelect = () => {
 		if (selectedCars.includes(car)) {
 			setSelectedCars(selectedCars.filter((currCar) => currCar !== car));
@@ -13,7 +16,7 @@ export default function ListItem({ car, selectedCars, setSelectedCars }) {
 
 	return (
 		<ItemContainer>
-			<ContentContainer>
+			<ContentContainer onClick={() => navigate(`/car/${car.id}`)}>
 				<h3>{car.name}</h3>
 				<TagContainer>
 					<Tag>{car.UF}</Tag>
@@ -40,6 +43,14 @@ const ContentContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+
+	> h3 {
+		cursor: pointer;
+
+		&:hover {
+			opacity: 70%;
+		}
+	}
 `;
 
 const ItemContainer = styled.li`
