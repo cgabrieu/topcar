@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Pagination from 'components/Pagination.component';
 import Dropdown from 'components/Dropdown.component';
@@ -12,7 +12,7 @@ import { BUTTONS, FILTERS } from './Home.consts';
 export default function Home() {
 	const {
 		selectedCarsValues: { selectedCars, setSelectedCars },
-		filtersValues: { setFilters, carsFiltered },
+		filtersValues: { filters, setFilters, carsFiltered },
 		paginationValues: { currentData, currentPage, next, prev, goTo, maxPage },
 	} = useContext(ListContext);
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,6 +35,13 @@ export default function Home() {
 			setSelectedCars([...selectedCars, ...unselectedCarsList]);
 		}
 	};
+
+	useEffect(() => {
+		const selectedCarsFiltered = selectedCars.filter((car) =>
+			carsFiltered.includes(car)
+		);
+		setSelectedCars(selectedCarsFiltered);
+	}, [filters]);
 
 	return (
 		<>
