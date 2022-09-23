@@ -1,33 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { ListContext } from 'contexts/ListCars.context';
 import Checkbox from './Checkbox.component';
 
-export default function ListItem({
-	car,
-	currentPage,
-	selectedCars,
-	setSelectedCars,
-}) {
+export default function ListItem({ car }) {
+	const {
+		selectedCarsValues: { selectedCars, setSelectedCars },
+	} = useContext(ListContext);
 	const navigate = useNavigate();
 
-	const currentPageSelectedCars = selectedCars[currentPage];
-	const isSelected = currentPageSelectedCars?.includes(car);
+	const isSelected = selectedCars.includes(car);
 
 	const handleOnSelect = () => {
-		if (isSelected) {
-			setSelectedCars({
-				...selectedCars,
-				[currentPage]: currentPageSelectedCars.filter(
-					(currCar) => currCar !== car
-				),
-			});
-		} else {
-			setSelectedCars({
-				...selectedCars,
-				[currentPage]: [...(currentPageSelectedCars || []), car],
-			});
-		}
+		let newSelectedCars = [...selectedCars, car];
+		if (isSelected)
+			newSelectedCars = selectedCars.filter((currCar) => currCar.id !== car.id);
+
+		setSelectedCars(newSelectedCars);
 	};
 
 	return (

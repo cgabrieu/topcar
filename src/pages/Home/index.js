@@ -10,52 +10,44 @@ import Checkbox from 'components/Checkbox.component';
 import { BUTTONS, FILTERS } from './Home.consts';
 
 export default function Home() {
-	const { selectedCarsValues, filtersValues, paginationValues } =
-		useContext(ListContext);
+	const {
+		selectedCarsValues: { selectedCars, setSelectedCars },
+		filtersValues: { setFilters, carsFiltered },
+		paginationValues: { currentData, currentPage, next, prev, goTo, maxPage },
+	} = useContext(ListContext);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
-	const { selectedCars, setSelectedCars } = selectedCarsValues;
-	const { filters, setFilters, carsFiltered } = filtersValues;
-	const { currentData, currentPage, next, prev, goTo, maxPage } =
-		paginationValues;
-
 	const currentCarsList = currentData();
-	const areAllSelected =
-		selectedCars[currentPage]?.length === currentCarsList.length;
-
-	const selectedCarsSummary = Object.values(selectedCars).flat();
-
-	const onChangeFilter = () => {
-		setSelectedCars([]);
-		goTo(1);
-	};
+	const areAllCarsSelected = currentCarsList.every((car) =>
+		selectedCars.includes(car)
+	);
 
 	const handleOnSelectAll = () => {
-		if (areAllSelected) {
-			setSelectedCars({
-				...selectedCars,
-				[currentPage]: [],
-			});
+		if (areAllCarsSelected) {
+			const selectedCarsWithoutCurrentCarsList = selectedCars.filter(
+				(car) => !currentCarsList.includes(car)
+			);
+			setSelectedCars(selectedCarsWithoutCurrentCarsList);
 		} else {
-			setSelectedCars({
-				...selectedCars,
-				[currentPage]: currentCarsList,
-			});
+			const unselectedCarsList = currentCarsList.filter(
+				(car) => !selectedCars.includes(car)
+			);
+			setSelectedCars([...selectedCars, ...unselectedCarsList]);
 		}
 	};
 
 	return (
 		<>
 			<Modal
-				selectedCarsSummary={selectedCarsSummary}
+				selectedCars={selectedCars}
 				isModalOpen={isModalOpen}
 				setIsModalOpen={setIsModalOpen}
 			/>
 			<HomeContainer>
 				<Navbar>
-					{selectedCarsSummary.length > 0 && (
+					{selectedCars.length > 0 && (
 						<>
-							<CancelButton onClick={() => setSelectedCars({})}>
+							<CancelButton onClick={() => setSelectedCars([])}>
 								{BUTTONS.cancel}
 							</CancelButton>
 							<ConfirmButton onClick={() => setIsModalOpen(true)}>
@@ -66,48 +58,27 @@ export default function Home() {
 				</Navbar>
 				<FiltersContainer>
 					<ButtonResetFilters
-						onClick={() => {
-							setFilters({ filterType: 'reset' });
-							onChangeFilter();
-						}}
+						onClick={() => setFilters({ filterType: 'reset' })}
 					>
 						{BUTTONS.resetFilters}
 					</ButtonResetFilters>
-					<Dropdown
-						type="UF"
-						headerText={FILTERS.UF}
-						carsList={carsFiltered}
-						filters={filters}
-						setFilters={setFilters}
-						onChangeFilter={onChangeFilter}
-					/>
+					<Dropdown type="UF" headerText={FILTERS.UF} carsList={carsFiltered} />
 					<Dropdown
 						type="model"
 						headerText={FILTERS.model}
 						carsList={carsFiltered}
-						filters={filters}
-						setFilters={setFilters}
-						onChangeFilter={onChangeFilter}
 					/>
 					<Dropdown
 						type="color"
 						headerText={FILTERS.color}
 						carsList={carsFiltered}
-						filters={filters}
-						setFilters={setFilters}
-						onChangeFilter={onChangeFilter}
 					/>
 					<Checkbox
-						isSelected={areAllSelected}
+						isSelected={areAllCarsSelected}
 						handleOnSelect={handleOnSelectAll}
 					/>
 				</FiltersContainer>
-				<List
-					carsList={currentCarsList}
-					currentPage={currentPage}
-					selectedCars={selectedCars}
-					setSelectedCars={setSelectedCars}
-				/>
+				<List carsList={currentCarsList} />
 				<Pagination
 					currentPage={currentPage}
 					next={next}
