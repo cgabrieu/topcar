@@ -21,6 +21,9 @@ export default function Home() {
 	const areAllCarsSelected = currentCarsList.every((car) =>
 		selectedCars.includes(car)
 	);
+	const someCarsSelected =
+		!areAllCarsSelected &&
+		currentCarsList.some((car) => selectedCars.includes(car));
 
 	const handleOnSelectAll = () => {
 		if (areAllCarsSelected) {
@@ -81,7 +84,7 @@ export default function Home() {
 						carsList={carsFiltered}
 					/>
 					<Checkbox
-						isSelected={areAllCarsSelected}
+						isSelected={someCarsSelected ? null : areAllCarsSelected}
 						handleOnSelect={handleOnSelectAll}
 					/>
 				</FiltersContainer>

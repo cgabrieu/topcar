@@ -15,6 +15,7 @@ export default function Checkbox({ isSelected, handleOnSelect }) {
 const CheckboxContainer = styled.div`
 	cursor: pointer;
 	min-width: 25px;
+	width: 25px;
 	height: 25px;
 	border: 3px solid var(--main-text-color);
 `;
