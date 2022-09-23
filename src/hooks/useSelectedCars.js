@@ -3,21 +3,18 @@ import { useState } from 'react';
 function useSelectedCars() {
 	const [selectedCars, setSelectedCars] = useState([]);
 
-	function areAllCarsSelected(currentCarsList) {
-		return currentCarsList.every((car) => selectedCars.includes(car));
-	}
-
 	function someCarsSelected(currentCarsList) {
-		return (
-			!areAllCarsSelected(currentCarsList) &&
-			currentCarsList.some((car) => selectedCars.includes(car))
-		);
+		return currentCarsList.some((car) => selectedCars.includes(car));
 	}
 
 	function currentCarListIsSelected(currentCarsList) {
-		return someCarsSelected(currentCarsList)
+		const areAllCarsSelected = currentCarsList.every((car) =>
+			selectedCars.includes(car)
+		);
+
+		return someCarsSelected(currentCarsList) && !areAllCarsSelected
 			? null
-			: areAllCarsSelected(currentCarsList);
+			: areAllCarsSelected;
 	}
 
 	function handleOnSelectCar(car) {
@@ -31,10 +28,7 @@ function useSelectedCars() {
 	}
 
 	function handleOnSelectAllCars(currentCarsList) {
-		const someOrAllCarsSelected =
-			areAllCarsSelected(currentCarsList) || someCarsSelected(currentCarsList);
-
-		if (someOrAllCarsSelected) {
+		if (someCarsSelected(currentCarsList)) {
 			const selectedCarsWithoutCurrentCarsList = selectedCars.filter(
 				(car) => !currentCarsList.includes(car)
 			);
