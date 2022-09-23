@@ -1,18 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { ReactComponent as MarkIcon } from 'assets/icons/mark.svg';
+import { ListContext } from 'contexts/ListCars.context';
+import Checkbox from './Checkbox.component';
 
-export default function ListItem({ car, selectedCars, setSelectedCars }) {
+export default function ListItem({ car }) {
+	const {
+		selectedCarsValues: { isCarSelected, handleOnSelectCar },
+	} = useContext(ListContext);
 	const navigate = useNavigate();
-
-	const handleOnSelect = () => {
-		if (selectedCars.includes(car)) {
-			setSelectedCars(selectedCars.filter((currCar) => currCar !== car));
-		} else {
-			setSelectedCars([...selectedCars, car]);
-		}
-	};
 
 	return (
 		<ItemContainer>
@@ -24,19 +20,13 @@ export default function ListItem({ car, selectedCars, setSelectedCars }) {
 					<Tag>{car.color}</Tag>
 				</TagContainer>
 			</ContentContainer>
-			<Checkbox onClick={handleOnSelect}>
-				{selectedCars.includes(car) && <MarkIcon />}
-			</Checkbox>
+			<Checkbox
+				isSelected={isCarSelected(car)}
+				handleOnSelect={() => handleOnSelectCar(car)}
+			/>
 		</ItemContainer>
 	);
 }
-
-const Checkbox = styled.div`
-	cursor: pointer;
-	min-width: 25px;
-	height: 25px;
-	border: 3px solid var(--main-text-color);
-`;
 
 const ContentContainer = styled.div`
 	height: 100%;

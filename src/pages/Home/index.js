@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Pagination from 'components/Pagination.component';
 import Dropdown from 'components/Dropdown.component';
@@ -6,24 +6,30 @@ import List from 'components/List.component';
 import Modal from 'components/Modal.component';
 import Navbar from 'components/Navbar.component';
 import { ListContext } from 'contexts/ListCars.context';
+import Checkbox from 'components/Checkbox.component';
 import { BUTTONS, FILTERS } from './Home.consts';
 
 export default function Home() {
-	const { selectedCarsValues, filtersValues, paginationValues } =
-		useContext(ListContext);
+	const {
+		selectedCarsValues: {
+			selectedCars,
+			setSelectedCars,
+			handleOnSelectAllCars,
+			currentCarListIsSelected,
+		},
+		filtersValues: { filters, setFilters, carsFiltered },
+		paginationValues: { currentData, currentPage, next, prev, goTo, maxPage },
+	} = useContext(ListContext);
 	const [isModalOpen, setIsModalOpen] = useState(false);
-
-	const { selectedCars, setSelectedCars } = selectedCarsValues;
-	const { filters, setFilters, carsFiltered } = filtersValues;
-	const { currentData, currentPage, next, prev, goTo, maxPage } =
-		paginationValues;
 
 	const currentCarsList = currentData();
 
-	const onChangeFilter = () => {
-		setSelectedCars([]);
-		goTo(1);
-	};
+	useEffect(() => {
+		const selectedCarsFiltered = selectedCars.filter((car) =>
+			carsFiltered.includes(car)
+		);
+		setSelectedCars(selectedCarsFiltered);
+	}, [filters]);
 
 	return (
 		<>
@@ -47,43 +53,27 @@ export default function Home() {
 				</Navbar>
 				<FiltersContainer>
 					<ButtonResetFilters
-						onClick={() => {
-							setFilters({ filterType: 'reset' });
-							onChangeFilter();
-						}}
+						onClick={() => setFilters({ filterType: 'reset' })}
 					>
 						{BUTTONS.resetFilters}
 					</ButtonResetFilters>
-					<Dropdown
-						type="UF"
-						headerText={FILTERS.UF}
-						carsList={carsFiltered}
-						filters={filters}
-						setFilters={setFilters}
-						onChangeFilter={onChangeFilter}
-					/>
+					<Dropdown type="UF" headerText={FILTERS.UF} carsList={carsFiltered} />
 					<Dropdown
 						type="model"
 						headerText={FILTERS.model}
 						carsList={carsFiltered}
-						filters={filters}
-						setFilters={setFilters}
-						onChangeFilter={onChangeFilter}
 					/>
 					<Dropdown
 						type="color"
 						headerText={FILTERS.color}
 						carsList={carsFiltered}
-						filters={filters}
-						setFilters={setFilters}
-						onChangeFilter={onChangeFilter}
+					/>
+					<Checkbox
+						isSelected={currentCarListIsSelected(currentCarsList)}
+						handleOnSelect={() => handleOnSelectAllCars(currentCarsList)}
 					/>
 				</FiltersContainer>
-				<List
-					carsList={currentCarsList}
-					selectedCars={selectedCars}
-					setSelectedCars={setSelectedCars}
-				/>
+				<List carsList={currentCarsList} />
 				<Pagination
 					currentPage={currentPage}
 					next={next}
