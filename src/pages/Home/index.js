@@ -69,8 +69,8 @@ export default function Home() {
 						carsList={carsFiltered}
 					/>
 					<Checkbox
-						isSelected={currentCarListIsSelected}
-						handleOnSelect={handleOnSelectAllCars}
+						isSelected={currentCarListIsSelected(currentCarsList)}
+						handleOnSelect={() => handleOnSelectAllCars(currentCarsList)}
 					/>
 				</FiltersContainer>
 				<List carsList={currentCarsList} />

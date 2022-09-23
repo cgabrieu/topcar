@@ -1,32 +1,40 @@
 import { useState } from 'react';
 
-function useSelectedCars(currentData) {
+function useSelectedCars() {
 	const [selectedCars, setSelectedCars] = useState([]);
 
-	const currentCarsList = currentData();
+	function areAllCarsSelected(currentCarsList) {
+		return currentCarsList.every((car) => selectedCars.includes(car));
+	}
 
-	const isCarSelected = (car) => selectedCars.includes(car);
+	function someCarsSelected(currentCarsList) {
+		return (
+			!areAllCarsSelected(currentCarsList) &&
+			currentCarsList.some((car) => selectedCars.includes(car))
+		);
+	}
 
-	const areAllCarsSelected = currentCarsList.every((car) =>
-		selectedCars.includes(car)
-	);
+	function currentCarListIsSelected(currentCarsList) {
+		return someCarsSelected(currentCarsList)
+			? null
+			: areAllCarsSelected(currentCarsList);
+	}
 
-	const someCarsSelected =
-		!areAllCarsSelected &&
-		currentCarsList.some((car) => selectedCars.includes(car));
-
-	const currentCarListIsSelected = someCarsSelected ? null : areAllCarsSelected;
-
-	const handleOnSelectCar = (car, isSelected) => {
+	function handleOnSelectCar(car) {
 		let newSelectedCars = [...selectedCars, car];
+		const isSelected = selectedCars.includes(car);
+
 		if (isSelected)
 			newSelectedCars = selectedCars.filter((currCar) => currCar.id !== car.id);
 
 		setSelectedCars(newSelectedCars);
-	};
+	}
 
-	const handleOnSelectAllCars = () => {
-		if (areAllCarsSelected) {
+	function handleOnSelectAllCars(currentCarsList) {
+		const someOrAllCarsSelected =
+			areAllCarsSelected(currentCarsList) || someCarsSelected(currentCarsList);
+
+		if (someOrAllCarsSelected) {
 			const selectedCarsWithoutCurrentCarsList = selectedCars.filter(
 				(car) => !currentCarsList.includes(car)
 			);
@@ -37,12 +45,11 @@ function useSelectedCars(currentData) {
 			);
 			setSelectedCars([...selectedCars, ...unselectedCarsList]);
 		}
-	};
+	}
 
 	return {
 		selectedCars,
 		setSelectedCars,
-		isCarSelected,
 		handleOnSelectCar,
 		handleOnSelectAllCars,
 		currentCarListIsSelected,
