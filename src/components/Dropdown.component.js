@@ -1,26 +1,24 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { ReactComponent as ArrowDownIcon } from 'assets/icons/arrow-down.svg';
 import useOutsideClick from 'hooks/useOutsideClick';
+import { ListContext } from 'contexts/ListCars.context';
 
-export default function Dropdown({
-	type,
-	headerText,
-	carsList,
-	filters,
-	setFilters,
-	onChangeFilter,
-}) {
+export default function Dropdown({ type, headerText, carsList }) {
 	const [isOpen, setIsOpen] = useState(false);
 	const ref = useOutsideClick(() => setIsOpen(false));
+	const {
+		paginationValues: { reset: resetPagination },
+		filtersValues: { filters, setFilters },
+	} = useContext(ListContext);
 
 	const options = carsList
 		.map((car) => car[type])
 		.filter((option, i, self) => self.indexOf(option) === i);
 
 	const handleOnClick = (option) => {
-		onChangeFilter();
 		setFilters({ filterType: type, option });
+		resetPagination();
 	};
 
 	return (
