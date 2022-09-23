@@ -11,33 +11,18 @@ import { BUTTONS, FILTERS } from './Home.consts';
 
 export default function Home() {
 	const {
-		selectedCarsValues: { selectedCars, setSelectedCars },
+		selectedCarsValues: {
+			selectedCars,
+			setSelectedCars,
+			handleOnSelectAllCars,
+			currentCarListIsSelected,
+		},
 		filtersValues: { filters, setFilters, carsFiltered },
 		paginationValues: { currentData, currentPage, next, prev, goTo, maxPage },
 	} = useContext(ListContext);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	const currentCarsList = currentData();
-	const areAllCarsSelected = currentCarsList.every((car) =>
-		selectedCars.includes(car)
-	);
-	const someCarsSelected =
-		!areAllCarsSelected &&
-		currentCarsList.some((car) => selectedCars.includes(car));
-
-	const handleOnSelectAll = () => {
-		if (areAllCarsSelected) {
-			const selectedCarsWithoutCurrentCarsList = selectedCars.filter(
-				(car) => !currentCarsList.includes(car)
-			);
-			setSelectedCars(selectedCarsWithoutCurrentCarsList);
-		} else {
-			const unselectedCarsList = currentCarsList.filter(
-				(car) => !selectedCars.includes(car)
-			);
-			setSelectedCars([...selectedCars, ...unselectedCarsList]);
-		}
-	};
 
 	useEffect(() => {
 		const selectedCarsFiltered = selectedCars.filter((car) =>
@@ -84,8 +69,8 @@ export default function Home() {
 						carsList={carsFiltered}
 					/>
 					<Checkbox
-						isSelected={someCarsSelected ? null : areAllCarsSelected}
-						handleOnSelect={handleOnSelectAll}
+						isSelected={currentCarListIsSelected}
+						handleOnSelect={handleOnSelectAllCars}
 					/>
 				</FiltersContainer>
 				<List carsList={currentCarsList} />

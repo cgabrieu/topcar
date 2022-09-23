@@ -6,19 +6,11 @@ import Checkbox from './Checkbox.component';
 
 export default function ListItem({ car }) {
 	const {
-		selectedCarsValues: { selectedCars, setSelectedCars },
+		selectedCarsValues: { isCarSelected, handleOnSelectCar },
 	} = useContext(ListContext);
 	const navigate = useNavigate();
 
-	const isSelected = selectedCars.includes(car);
-
-	const handleOnSelect = () => {
-		let newSelectedCars = [...selectedCars, car];
-		if (isSelected)
-			newSelectedCars = selectedCars.filter((currCar) => currCar.id !== car.id);
-
-		setSelectedCars(newSelectedCars);
-	};
+	const isSelected = isCarSelected(car);
 
 	return (
 		<ItemContainer>
@@ -30,7 +22,10 @@ export default function ListItem({ car }) {
 					<Tag>{car.color}</Tag>
 				</TagContainer>
 			</ContentContainer>
-			<Checkbox isSelected={isSelected} handleOnSelect={handleOnSelect} />
+			<Checkbox
+				isSelected={isSelected}
+				handleOnSelect={() => handleOnSelectCar(car, isSelected)}
+			/>
 		</ItemContainer>
 	);
 }
