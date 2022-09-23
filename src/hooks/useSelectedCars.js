@@ -3,6 +3,10 @@ import { useState } from 'react';
 function useSelectedCars() {
 	const [selectedCars, setSelectedCars] = useState([]);
 
+	function isCarSelected(car) {
+		return selectedCars.includes(car);
+	}
+
 	function someCarsSelected(currentCarsList) {
 		return currentCarsList.some((car) => selectedCars.includes(car));
 	}
@@ -19,9 +23,8 @@ function useSelectedCars() {
 
 	function handleOnSelectCar(car) {
 		let newSelectedCars = [...selectedCars, car];
-		const isSelected = selectedCars.includes(car);
 
-		if (isSelected)
+		if (isCarSelected(car))
 			newSelectedCars = selectedCars.filter((currCar) => currCar.id !== car.id);
 
 		setSelectedCars(newSelectedCars);
@@ -44,6 +47,7 @@ function useSelectedCars() {
 	return {
 		selectedCars,
 		setSelectedCars,
+		isCarSelected,
 		handleOnSelectCar,
 		handleOnSelectAllCars,
 		currentCarListIsSelected,

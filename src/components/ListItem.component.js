@@ -6,7 +6,7 @@ import Checkbox from './Checkbox.component';
 
 export default function ListItem({ car }) {
 	const {
-		selectedCarsValues: { selectedCars, handleOnSelectCar },
+		selectedCarsValues: { isCarSelected, handleOnSelectCar },
 	} = useContext(ListContext);
 	const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ export default function ListItem({ car }) {
 				</TagContainer>
 			</ContentContainer>
 			<Checkbox
-				isSelected={selectedCars.includes(car)}
+				isSelected={isCarSelected(car)}
 				handleOnSelect={() => handleOnSelectCar(car)}
 			/>
 		</ItemContainer>
