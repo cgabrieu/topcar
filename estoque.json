@@ -1,0 +1,137 @@
+[
+  {
+    "codigo": "150905",
+    "marca": "Mercedes-Benz",
+    "modelo": "SL 63 AMG",
+    "versao": "4.0 V8 Turbo PHEV S E Performance 4MATIC+ Speedshift",
+    "ano": 2025,
+    "preco": "1599000",
+    "codigo_fipe": "0098342"
+  },
+  {
+    "codigo": "150912",
+    "marca": "Mercedes-Benz",
+    "modelo": "Sprinter",
+    "versao": "2.2 CDI Diesel Van 415 TA Longo 10L Manual",
+    "ano": 2014,
+    "preco": "129900",
+    "codigo_fipe": "0087265"
+  },
+  {
+    "codigo": "150915",
+    "marca": "Mini",
+    "modelo": "Cooper",
+    "versao": "2.0 16V Twinpower Gasolina S Exclusive 4P Steptronic",
+    "ano": 2025,
+    "preco": "234900",
+    "codigo_fipe": "0031123"
+  },
+  {
+    "codigo": "150934",
+    "marca": "Peugeot",
+    "modelo": "Expert",
+    "versao": "2.2 Turbo Diesel Vitré Manual",
+    "ano": 2025,
+    "preco": "189900",
+    "codigo_fipe": "0064521"
+  },
+  {
+    "codigo": "150944",
+    "marca": "Porsche",
+    "modelo": "911",
+    "versao": "4.0 24V H6 Gasolina GT3 Touring Manual",
+    "ano": 2025,
+    "preco": "1780000",
+    "codigo_fipe": "0098721"
+  },
+  {
+    "codigo": "150950",
+    "marca": "Porsche",
+    "modelo": "Macan",
+    "versao": "2.9 V6 Bi-Turbo Gasolina S PDK",
+    "ano": 2025,
+    "preco": "559900",
+    "codigo_fipe": "0098782"
+  },
+  {
+    "codigo": "150958",
+    "marca": "Ram",
+    "modelo": "Rampage",
+    "versao": "2.0 Hurricane 4 Turbo Gasolina Laramie 4x4 Automático",
+    "ano": 2025,
+    "preco": "249900",
+    "codigo_fipe": "0846234"
+  },
+  {
+    "codigo": "148493",
+    "marca": "VW",
+    "modelo": "T-Cross",
+    "versao": "1.4 250 TSI Total Flex Highline Automático",
+    "ano": 2020,
+    "preco": "112900",
+    "codigo_fipe": "0054612"
+  },
+  {
+    "codigo": "148500",
+    "marca": "VW",
+    "modelo": "Tiguan",
+    "versao": "2.0 350 TSI Gasolina Allspace R-Line 4Motion DSG",
+    "ano": 2021,
+    "preco": "192900",
+    "codigo_fipe": "0054732"
+  },
+  {
+    "codigo": "150111",
+    "marca": "VW",
+    "modelo": "Golf",
+    "versao": "2.0 Turbo Gasolina GTI 40th Anniversary Edition DSG",
+    "ano": 2023,
+    "preco": "249900",
+    "codigo_fipe": "0054709"
+  },
+  {
+    "codigo": "145441",
+    "marca": "VW",
+    "modelo": "Jetta",
+    "versao": "1.4 250 TSI Total Flex Comfortline Tiptronic",
+    "ano": 2020,
+    "preco": "104900",
+    "codigo_fipe": "0054078"
+  },
+  {
+    "codigo": "150246",
+    "marca": "Ferrari",
+    "modelo": "Roma",
+    "versao": "3.9 V8 Turbo Gasolina Spider F1-DCT",
+    "ano": 2024,
+    "preco": "3790000",
+    "codigo_fipe": "0108444"
+  },
+  {
+    "codigo": "150277",
+    "marca": "Lamborghini",
+    "modelo": "Urus",
+    "versao": "4.0 V8 Turbo Gasolina Performante Automático",
+    "ano": 2024,
+    "preco": "4590000",
+    "codigo_fipe": "0107889"
+  },
+  {
+    "codigo": "150208",
+    "marca": "Audi",
+    "modelo": "A4",
+    "versao": "2.0 TFSI MHEV Prestige Quattro S-Tronic",
+    "ano": 2024,
+    "preco": "319900",
+    "codigo_fipe": "0087222"
+  },
+  {
+    "codigo": "145456",
+    "marca": "VW",
+    "modelo": "Jetta",
+    "versao": "2.0 TSI Highline 211cv Gasolina 4P Tiptronic",
+    "ano": 2017,
+    "preco": "89900",
+    "codigo_fipe": "0053922"
+  }
+]
